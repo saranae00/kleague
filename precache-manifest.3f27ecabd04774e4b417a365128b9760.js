@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "600cc08958822fc82b907970755a4a1f",
+    "revision": "0fadfc2863342558648563e21a8c0830",
     "url": "/kleague/index.html"
   },
   {

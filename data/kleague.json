@@ -11417,6 +11417,118 @@
     "match_date": "2019-10-6",
     "round": "33",
     "match_time": "14:00",
+    "stadium": "포항 스틸야드",
+    "home": "포항",
+    "away": "울산",
+    "home_score": "2",
+    "away_score": "1",
+    "spectator": "14769",
+    "home_stat": {
+      "possession": "54",
+      "shooting": "15",
+      "shooting_on_target": "8",
+      "foul": "10",
+      "yellow": "1",
+      "red": "0",
+      "conerkick": "5",
+      "freekick": "12",
+      "offside": "2"
+    },
+    "away_stat": {
+      "possession": "46",
+      "shooting": "10",
+      "shooting_on_target": "5",
+      "foul": "16",
+      "yellow": "2",
+      "red": "0",
+      "conerkick": "1",
+      "freekick": "18",
+      "offside": "2"
+    },
+    "home_goal": [
+      {
+        "player": "팔로세비치",
+        "time": "후41",
+        "own": "false",
+        "assist_player": ""
+      },
+      {
+        "player": "이광혁",
+        "time": "후47",
+        "own": "false",
+        "assist_player": "팔로세비치"
+      }
+    ],
+    "away_goal": [
+      { "player": "김태환", "time": "후5", "own": "false", "assist_player": "" }
+    ],
+    "home_card": [],
+    "away_card": [
+      { "player": "윤영선", "time": "후15", "type": "yellow" },
+      { "player": "김창수", "time": "후40", "type": "yellow" }
+    ]
+  },
+  {
+    "match_date": "2019-10-6",
+    "round": "33",
+    "match_time": "14:00",
+    "stadium": "제주 월드컵",
+    "home": "제주",
+    "away": "경남",
+    "home_score": "1",
+    "away_score": "2",
+    "spectator": "5046",
+    "home_stat": {
+      "possession": "68",
+      "shooting": "25",
+      "shooting_on_target": "9",
+      "foul": "11",
+      "yellow": "1",
+      "red": "0",
+      "conerkick": "4",
+      "freekick": "12",
+      "offside": "1"
+    },
+    "away_stat": {
+      "possession": "32",
+      "shooting": "12",
+      "shooting_on_target": "7",
+      "foul": "14",
+      "yellow": "1",
+      "red": "0",
+      "conerkick": "1",
+      "freekick": "15",
+      "offside": "1"
+    },
+    "home_goal": [
+      {
+        "player": "남준재",
+        "time": "후44",
+        "own": "false",
+        "assist_player": ""
+      }
+    ],
+    "away_goal": [
+      {
+        "player": "조재철",
+        "time": "후3",
+        "own": "false",
+        "assist_player": ""
+      },
+      {
+        "player": "우주성",
+        "time": "후22",
+        "own": "false",
+        "assist_player": ""
+      }
+    ],
+    "home_card": [{ "player": "남준재", "time": "후26", "type": "yellow" }],
+    "away_card": [{ "player": "이범수", "time": "후49", "type": "yellow" }]
+  },
+  {
+    "match_date": "2019-10-6",
+    "round": "33",
+    "match_time": "14:00",
     "stadium": "수원 월드컵",
     "home": "수원",
     "away": "서울",

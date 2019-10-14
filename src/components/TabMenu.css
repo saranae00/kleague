@@ -1,0 +1,23 @@
+.tab_buttons {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  width: 100%;
+  cursor: pointer;
+}
+.tab_buttons_item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #cccccc;
+  width: calc(100% / 3);
+  height: 30px;
+}
+
+.tab_buttons_item_active {
+  background: #084b8a;
+  color: white;
+}
+.tab_contents {
+  padding-top: 10px;
+}

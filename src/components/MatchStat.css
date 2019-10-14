@@ -1,0 +1,29 @@
+.matchInfo_stat {
+  width: 100%;
+}
+
+.matchInfo_stat_row {
+  display: flex;
+  flex-direction: row;
+}
+
+.matchInfo_stat_row_graph {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+}
+
+.matchInfo_stat_row_dataText {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10%;
+}
+
+.matchInfo_stat_row_label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+}

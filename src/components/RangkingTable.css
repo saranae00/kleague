@@ -1,0 +1,53 @@
+.rangkingTable {
+  display: flex;
+  width: 100%;
+}
+
+.rangkingTable tbody {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.rangkingTable tr {
+  display: flex;
+  width: 100%;
+}
+
+.rangkingTable tr td {
+  display: flex;
+  justify-content: center;
+}
+
+.rangkingTable_row {
+  width: 100%;
+}
+
+.rangkingTable_title {
+  background: #6633ff;
+  color: white;
+}
+
+.rangkingTable_rank {
+  width: 19%;
+}
+
+.rangkingTable_name {
+  width: 26%;
+}
+
+.rangkingTable_winningpoint {
+  width: 19%;
+}
+
+.rangkingTable_yellow {
+  width: 19%;
+}
+
+.rangkingTable_red {
+  width: 19%;
+}
+
+.rangkingTable_content:nth-child(-2n + 13) {
+  background: rgba(153, 204, 204, 0.3);
+}

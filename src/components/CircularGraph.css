@@ -1,0 +1,67 @@
+.circular_graph_wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.circular_graph_row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.circular_graph_title {
+  width: 100%;
+}
+
+.circular_graph_table_div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+}
+
+.circular_graph_table {
+  width: 90%;
+}
+.circular_graph_table_teamColor {
+  width: 10%;
+}
+
+.circular_graph_table_teamName {
+  width: 30%;
+  text-align: center;
+}
+
+.circular_graph_table_teamValue {
+  width: 60%;
+}
+
+@media all and (max-width: 768px) {
+  .circular_graph_row {
+    flex-direction: column;
+  }
+
+  .circular_graph_table_div {
+    width: 90%;
+    padding-top: 10px;
+  }
+
+  .circular_graph_table {
+    width: 80%;
+  }
+  .circular_graph_table_teamColor {
+    width: 5%;
+  }
+
+  .circular_graph_table_teamName {
+    width: 40%;
+    text-align: center;
+  }
+
+  .circular_graph_table_teamValue {
+    width: 55%;
+  }
+}

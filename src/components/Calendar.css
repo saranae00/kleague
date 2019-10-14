@@ -1,0 +1,142 @@
+.calendar {
+  width: 100%;
+  height: 100%;
+}
+
+.calendar-label-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-bottom: 10px;
+}
+
+.calendar-label {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  height: 100%;
+  cursor: default;
+}
+.calendar-label-year,
+.calendar-label-month {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  font-size: 1.5rem;
+  font-weight: 350;
+}
+
+.calendar-prev-year,
+.calendar-prev-month,
+.calendar-next-month,
+.calendar-next-year {
+  display: flex;
+  justify-content: center;
+  width: 10%;
+}
+
+.calendar-body {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+  border-left: 1px solid #cccccc;
+  border-top: 1px solid #cccccc;
+}
+.calendar-day {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: calc((100% - 8px) / 7);
+  border-right: 1px solid #cccccc;
+  border-bottom: 1px solid #cccccc;
+  cursor: default;
+}
+.calendar-date {
+  display: flex;
+  width: calc((100% - 8px) / 7);
+  border-right: 1px solid #cccccc;
+  border-bottom: 1px solid #cccccc;
+}
+
+.calendar-date-dateNum {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-size: 1.5rem;
+  font-weight: 350;
+  cursor: pointer;
+}
+
+.calendar-date-sun {
+  color: red;
+}
+
+.calendar-date-satur {
+  color: blue;
+}
+
+.calendar-date-today {
+  background: rgba(248, 123, 85, 0.5);
+}
+
+.calendar-date-contents {
+  display: flex;
+  align-items: center;
+  width: calc(100% - 2rem);
+  height: 100%;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.calendar-date-triangle {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 15px solid pink;
+  border-right: 15px solid transparent;
+}
+
+.calendar-date-selected {
+  background: radial-gradient(
+    circle closest-side,
+    rgba(0, 255, 0, 0.5),
+    rgba(255, 255, 255, 0.5)
+  );
+}
+
+button {
+  display: flex;
+  align-items: center;
+  background: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+@media all and (max-width: 768px) {
+  .calendar-date {
+    height: 2rem;
+  }
+  .calendar-date-dateNum {
+    font-size: 1.2rem;
+    font-weight: 300;
+  }
+
+  .calendar-label-year,
+  .calendar-label-month {
+    font-size: 1rem;
+  }
+
+  .calendar-label-wrapper {
+    padding-bottom: 5px;
+  }
+}

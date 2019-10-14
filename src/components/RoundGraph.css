@@ -1,0 +1,19 @@
+.rangking_round {
+  width: 100%;
+}
+
+.rangking_round_row {
+  width: 100%;
+}
+.rangking_round_row_combo {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.rangking_round_graph {
+  position: relative;
+}
+.rangking_round_graph_grid {
+  position: absolute;
+}

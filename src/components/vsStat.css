@@ -1,0 +1,9 @@
+.vsStat_seletTeam {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.vsStat_text {
+  display: flex;
+  justify-content: center;
+}

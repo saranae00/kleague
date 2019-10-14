@@ -1,0 +1,59 @@
+body {
+  overflow-y: scroll;
+}
+
+.main_wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 50%;
+}
+
+.main_tab_buttons {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  width: 100%;
+  height: 3rem;
+  cursor: pointer;
+}
+
+.main_tab_buttons_item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  background: #ddd9d0;
+}
+
+.main_tab_buttons_item_active {
+  background: #00578d;
+  color: white;
+}
+
+.main_calendar {
+  display: flex;
+  width: 100%;
+  padding-top: 20px;
+}
+
+.main_matchInfo {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-top: 20px;
+}
+
+@media all and (max-width: 768px) {
+  .main {
+    width: 90%;
+  }
+}

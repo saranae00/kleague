@@ -1,68 +1,20 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## K리그 2019
 
-In the project directory, you can run:
+2019년 K리그 데이터를 json 파일에서 불러와 각종 차트와 표로 도식화 합니다.
 
-### `npm start`
+### 경기 정보
+경기 데이터가 있는 날짜를 달력에 표시하여 해당 날짜를 클릭시 경기 정보를 조회할 수 있습니다.
+  - 경기 정보 : 경기 시간, 장소, 관중수, 득점 선수 및 카드 정보를 조회할 수 있습니다.
+  - 경기 통계 : 점유율, 슈팅, 유효 슈팅, 파울, 경고, 퇴장, 코너킥, 프리킥, 오프사이드를 canvas를 이용한 바 그래프로 도식화 했습니다.
+  - 경기 영상 : 유튜브 api를 이용해 해당 경기의 하이라이트 영상을 표시 합니다.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+### 통계
+리그 데이터를 도식화 했습니다.
+  - 순위 : 순위 테이블과 라운드별 순위를 조회 합니다.
+          라운드별 순위는 canvas를 이용한 꺾은선 그래프로 구현 했습니다.
+  - 관중수 : 라운드별 관중수, 경기별 관중수, 팀별 관중수를 조회 합니다.
+            라운드별 관중수와 경기별 관중수는 canvas를 이용한 꺾은선 그래프로 구현했고, 경기별 관중수는 콤보박스를 이용해 추가적으로 팀별로 조회               가능 합니다. 
+            팀별 관중수는 canvas를 이용한 원 그래프로 구현했습니다.
+  - 상대 전적 : 선택한 두 팀의 상대 전적을 canvas를 이용한 원 그래프로 조회 합니다.

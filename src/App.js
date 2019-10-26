@@ -1,19 +1,9 @@
 import React from 'react';
 import './App.css';
-import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-import './components/Calendar.css';
-import KleagueMain from './components/KleagueMain';
-import rootReducer from './modules';
-
-const store = createStore(rootReducer);
+import KleagueMain from './kleague/components/KleagueMain';
 
 function App() {
-  return (
-    <Provider store={store}>
-      <KleagueMain />
-    </Provider>
-  );
+  return <KleagueMain />;
 }
 
 export default App;

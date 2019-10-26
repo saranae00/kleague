@@ -3,12 +3,13 @@ import './MatchInfo.css';
 import MatchInfoItem from './MatchInfoItem';
 
 const MatchInfo = dateItem => {
-  const { year, month, date, match } = dateItem;
+  const { selectedFullDate, match } = dateItem;
 
   return (
     <div className="matchInfo_wrapper">
       <div className="matchInfo_label">
-        {year}년 {month}월 {date}일{' '}
+        {selectedFullDate.year}년 {selectedFullDate.month}월{' '}
+        {selectedFullDate.date}일{' '}
       </div>
       {match.length > 0 ? (
         <Fragment>

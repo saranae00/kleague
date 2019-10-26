@@ -12,9 +12,11 @@ const initialState = {
   navYear: currentDate.getFullYear(),
   navMonth: currentDate.getMonth() + 1,
   navDate: currentDate.getDate(),
-  selectedYear: currentDate.getFullYear(),
-  selectedMonth: currentDate.getMonth() + 1,
-  selectedDate: currentDate.getDate(),
+  selectedFullDate: {
+    year: currentDate.getFullYear(),
+    month: currentDate.getMonth() + 1,
+    date: currentDate.getDate()
+  },
   selectedMatch: []
 };
 
@@ -29,9 +31,11 @@ const calendar = handleActions(
 
       const result = {
         ...state,
-        selectedYear: fullDate.getFullYear(),
-        selectedMonth: fullDate.getMonth() + 1,
-        selectedDate: fullDate.getDate(),
+        selectedFullDate: {
+          year: fullDate.getFullYear(),
+          month: fullDate.getMonth() + 1,
+          date: fullDate.getDate()
+        },
         selectedMatch: action.payload.contents
       };
       return result;

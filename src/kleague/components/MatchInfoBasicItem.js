@@ -2,59 +2,44 @@ import React, { Fragment } from 'react';
 import produce from 'immer';
 
 const MatchInfoBasicItem = matchItems => {
-  let matchItem = produce(matchItems.matchItem, () => {});
-  if (
-    matchItem.home_goal.length === 0 ||
-    matchItem.away_goal.length > matchItem.home_goal.length
-  ) {
-    for (
-      let i = 0;
-      i < matchItem.away_goal.length - matchItem.home_goal.length + 1;
-      i++
+  // 홈팀과 어웨이팀 득점자 목록 길이 맞추기
+  const matchItem = produce(matchItems.matchItem, draft => {
+    if (
+      draft.home_goal.length === 0 ||
+      draft.away_goal.length > draft.home_goal.length
     ) {
-      matchItem.home_goal.push({
-        player: '',
-        time: '',
-        own: 'false',
-        assist_player: ''
-      });
+      for (
+        let i = 0;
+        i < draft.away_goal.length - draft.home_goal.length + 1;
+        i++
+      ) {
+        draft.home_goal.push({
+          player: '',
+          time: '',
+          own: 'false',
+          assist_player: ''
+        });
+      }
     }
-  }
-  if (
-    matchItem.away_goal.length === 0 ||
-    matchItem.away_goal.length < matchItem.home_goal.length
-  ) {
-    for (
-      let i = 0;
-      i < matchItem.home_goal.length - matchItem.away_goal.length + 1;
-      i++
+    if (
+      draft.away_goal.length === 0 ||
+      draft.away_goal.length < draft.home_goal.length
     ) {
-      matchItem.away_goal.push({
-        player: '',
-        time: '',
-        own: 'false',
-        assist_player: ''
-      });
+      for (
+        let i = 0;
+        i < draft.home_goal.length - draft.away_goal.length + 1;
+        i++
+      ) {
+        draft.away_goal.push({
+          player: '',
+          time: '',
+          own: 'false',
+          assist_player: ''
+        });
+      }
     }
-  }
+  });
 
-  if (
-    matchItem.home_goal.length === 0 ||
-    matchItem.home_goal.length < matchItem.away_goal.length
-  ) {
-    for (
-      let i = 0;
-      i < matchItem.away_goal.length - matchItem.home_goal.length + 1;
-      i++
-    ) {
-      matchItem.home_goal.push({
-        player: '',
-        time: '',
-        own: 'false',
-        assist_player: ''
-      });
-    }
-  }
   return (
     <Fragment>
       <div className="matchInfoItem_spec">

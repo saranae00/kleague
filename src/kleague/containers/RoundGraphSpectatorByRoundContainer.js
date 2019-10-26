@@ -1,9 +1,9 @@
 import React, { useCallback } from 'react';
 import { useDispatch } from 'react-redux';
-import { load, move } from '../modules/roundGraph';
-import RoundGraph from '../components/RoundGraph';
+import { load, move } from '../../graph/modules/roundGraphSpectatorByRound';
+import RoundGraph from '../../graph/components/RoundGraph';
 
-const RoundGraphContainer = props => {
+const RoundGraphSpectatorByRoundContainer = props => {
   const dispatch = useDispatch();
   const onGraphLoad = useCallback(arg => dispatch(load(arg)), [dispatch]);
   const onGraphMouseMove = useCallback(arg => dispatch(move(arg)), [dispatch]);
@@ -20,4 +20,4 @@ const RoundGraphContainer = props => {
   );
 };
 
-export default RoundGraphContainer;
+export default RoundGraphSpectatorByRoundContainer;

@@ -6,8 +6,8 @@ const CircularGraph = props => {
   const canvas = useRef(null);
   const canvasWidth =
     document.documentElement.clientWidth > 768
-      ? parseInt(document.documentElement.clientWidth * 0.2)
-      : parseInt(document.documentElement.clientWidth * 0.9);
+      ? parseInt(document.documentElement.clientWidth * 0.1)
+      : parseInt(document.documentElement.clientWidth * 0.3);
 
   let sortedData = JSON.parse(JSON.stringify(data));
 

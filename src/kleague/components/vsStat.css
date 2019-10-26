@@ -1,0 +1,46 @@
+.vsStat_seletTeam {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.vsStat_text {
+  display: flex;
+  justify-content: center;
+}
+
+.vsStat_content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.vsStat_home_item,
+.vsStat_away_item {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 4rem;
+}
+
+.vsStat-dnd-dustbin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px 10px;
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+}
+
+.vsStatItem {
+  border: 1px solid black;
+  padding: 5px 10px;
+  margin: 5px 0px;
+}
+
+@media all and (max-width: 768px) {
+  .vsStat-dnd-dustbin {
+    width: 50px;
+  }
+}

@@ -1,5 +1,5 @@
 import React from 'react';
-import BarGraph from './BarGraph';
+import BarGraph from '../../graph/components/BarGraph';
 
 const MatchStatItem = matchItems => {
   const { matchItem } = matchItems;

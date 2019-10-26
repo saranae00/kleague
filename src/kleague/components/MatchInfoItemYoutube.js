@@ -12,7 +12,7 @@ const MatchInfoItemYoutube = matchItems => {
   splDate[2] = splDate[2] < 10 ? '0' + splDate[2] : splDate[2];
 
   useEffect(() => {
-    const abortController = new AbortController();
+    let isActive = true;
 
     YTSearch(
       {
@@ -23,14 +23,16 @@ const MatchInfoItemYoutube = matchItems => {
       },
       function(data) {
         const dataList = data.map(dataItem => dataItem);
-        setVideoList(dataList);
+        if (isActive) {
+          setVideoList(dataList);
+        }
       }
     );
+
     return () => {
-      abortController.abort();
+      isActive = false;
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [matchItem]);
+  }, [matchItem, splDate]);
 
   let url = '';
   if (videoList.length > 0) {

@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import calendar from './calendar';
-import roundGraph from './roundGraph';
-import roundGraphSpectator from './roundGraphSpectator';
-import roundGraphSpectatorByRound from './roundGraphSpectatorByRound';
+import calendar from '../calendar/modules/calendar';
+import roundGraph from '../graph/modules/roundGraph';
+import roundGraphSpectator from '../graph/modules/roundGraphSpectator';
+import roundGraphSpectatorByRound from '../graph/modules/roundGraphSpectatorByRound';
 
 const rootReducer = combineReducers({
   calendar,

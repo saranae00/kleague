@@ -1,6 +1,6 @@
 import React, { useState, useEffect, Fragment } from 'react';
 import axios from 'axios';
-import CalendarContainer from '../containers/CalendarContainer';
+import CalendarContainer from '../../calendar/containers/CalendarContainer';
 import './kleague.css';
 import MatchInfoContainer from '../containers/MatchInfoContainer';
 import cn from 'classnames';

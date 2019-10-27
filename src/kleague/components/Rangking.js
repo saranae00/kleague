@@ -57,6 +57,11 @@ const Rangking = props => {
 
   const backend = isPhone ? TouchBackend : HTML5Backend;
 
+  const spectatorByTeamCircularGraphWidth =
+    document.documentElement.clientWidth > 768
+      ? parseInt(document.documentElement.clientWidth * 0.2)
+      : parseInt(document.documentElement.clientWidth * 0.9);
+
   const tab = [
     {
       id: 0,
@@ -111,6 +116,7 @@ const Rangking = props => {
             <CircularGraph
               data={spectatorArrayByTeam}
               title="팀별 관중수"
+              width={spectatorByTeamCircularGraphWidth}
             ></CircularGraph>
           </div>
         </Fragment>

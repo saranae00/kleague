@@ -48,16 +48,25 @@ const VsStat = props => {
   const handleDrop = useCallback(
     (index, item) => {
       const { name } = item;
-      setDroppedBoxNames(name ? name : '');
+      setDroppedBoxNames(
+        // 데이터의 최대 갯수가 2개인 큐의 형태로 구현
+        produce(droppedBoxNames, draft => {
+          draft.push(name);
+          if (draft.length > 2) {
+            draft.shift();
+          }
+          return draft;
+        })
+      );
       setDustbins(
-        produce(draft => {
+        produce(dustbins, draft => {
           draft[index].lastDroppedItem = { ...item };
           return draft;
         })
       );
       item.type === VsStatItemType.HOME ? setHome(name) : setAway(name);
     },
-    [dustbins]
+    [dustbins, droppedBoxNames]
   );
 
   let vsStat = {
@@ -162,7 +171,12 @@ const VsStat = props => {
       value: vsStat.draw
     }
   ];
-  console.log(dustbins);
+
+  const vsStatCircularGraphWidth =
+    document.documentElement.clientWidth > 768
+      ? parseInt(document.documentElement.clientWidth * 0.1)
+      : parseInt(document.documentElement.clientWidth * 0.3);
+
   return (
     <Fragment>
       <div className="vsStat_seletTeam">
@@ -230,14 +244,17 @@ const VsStat = props => {
           )}
         </div>
         {mathchList.length > 0 && (
-          <div>
+          <div className="vsStat_graph">
             <div className="vsStat_text">
               {`${vsStat.home_name} : ${vsStat.win}승 ${vsStat.draw}무 ${vsStat.lose}패 (${vsStat.score}득점 ${vsStat.lost}실점)`}
               <br />
               {`${vsStat.away_name} : ${vsStat.lose}승 ${vsStat.draw}무 ${vsStat.win}패 (${vsStat.lost}득점 ${vsStat.score}실점)`}
             </div>
             <div>
-              <CircularGraph data={graphData} />
+              <CircularGraph
+                data={graphData}
+                width={vsStatCircularGraphWidth}
+              />
             </div>
           </div>
         )}

@@ -2,12 +2,9 @@ import React, { useRef, useEffect } from 'react';
 import './CircularGraph.css';
 
 const CircularGraph = props => {
-  const { data, title } = props;
+  const { data, title, width } = props;
   const canvas = useRef(null);
-  const canvasWidth =
-    document.documentElement.clientWidth > 768
-      ? parseInt(document.documentElement.clientWidth * 0.1)
-      : parseInt(document.documentElement.clientWidth * 0.3);
+  const canvasWidth = width;
 
   let sortedData = JSON.parse(JSON.stringify(data));
 

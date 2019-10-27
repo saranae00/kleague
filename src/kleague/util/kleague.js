@@ -116,7 +116,7 @@ export const calTeamArrayTotal = (round, matchList) => {
       }
     }
   }
-  console.log(statByRound[0]);
+
   return result;
 };
 

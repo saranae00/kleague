@@ -17,9 +17,9 @@ const VsStatDustbin = ({ accept, lastDroppedItem, onDrop }) => {
     <div
       ref={drop}
       className={cn(
-        'vsStat-dnd-dustbin',
-        { 'vsStat-dnd-dustbin-active': isActive },
-        { 'vsStat-dnd-dustbin-canDrop': canDrop }
+        'vsStat_dnd_dustbin',
+        { vsStat_dnd_dustbin_active: isActive },
+        { vsStat_dnd_dustbin_canDrop: canDrop }
       )}
     >
       {canDrop

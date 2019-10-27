@@ -23,20 +23,29 @@
   width: 4rem;
 }
 
-.vsStat-dnd-dustbin {
+.vsStat_dnd_dustbin {
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0px 10px;
   width: 100px;
   height: 100px;
-  border: 1px solid black;
+  border: 1px dashed #a4a4a4;
+}
+
+.vsStat_dnd_dustbin_active,
+.vsStat_dnd_dustbin_canDrop {
+  color: #a4a4a4;
 }
 
 .vsStatItem {
   border: 1px solid black;
   padding: 5px 10px;
   margin: 5px 0px;
+}
+
+.vsStat_graph {
+  width: 50%;
 }
 
 @media all and (max-width: 768px) {

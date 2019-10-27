@@ -3,6 +3,8 @@
 }
 
 .rangking_round_row {
+  display: flex;
+  justify-content: center;
   width: 100%;
 }
 .rangking_round_row_combo {

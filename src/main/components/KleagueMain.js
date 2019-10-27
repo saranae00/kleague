@@ -2,9 +2,10 @@ import React, { useState, useEffect, Fragment } from 'react';
 import axios from 'axios';
 import CalendarContainer from '../../calendar/containers/CalendarContainer';
 import './kleague.css';
-import MatchInfoContainer from '../containers/MatchInfoContainer';
+import MatchInfoContainer from '../../kleague/containers/MatchInfoContainer';
 import cn from 'classnames';
-import Rangking from './Rangking';
+import Rangking from '../../kleague/components/Rangking';
+import Stadium from '../../stadium/components/Stadium';
 
 const KleagueMain = () => {
   const [matchList, setMatchList] = useState(null);
@@ -13,6 +14,11 @@ const KleagueMain = () => {
   const tab = [
     {
       id: 0,
+      subject: '경기장 정보',
+      content: <Stadium />
+    },
+    {
+      id: 1,
       subject: '경기 정보',
       content: (
         <Fragment>
@@ -26,7 +32,7 @@ const KleagueMain = () => {
       )
     },
     {
-      id: 1,
+      id: 2,
       subject: '통계',
       content: <Rangking matchList={matchList} />
     }

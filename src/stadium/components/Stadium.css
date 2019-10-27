@@ -1,0 +1,10 @@
+.stadium_wrapper {
+  display: flex;
+}
+
+.stadiumMap_label {
+  background: white;
+  border: 1px solid gray;
+  font-size: 1rem;
+  z-index: 9999;
+}

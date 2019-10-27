@@ -1,5 +1,3 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 ## K리그 2019
 
 2019년 K리그 데이터를 json 파일에서 불러와 각종 차트와 표로 도식화 합니다.
@@ -17,4 +15,4 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
   - 관중수 : 라운드별 관중수, 경기별 관중수, 팀별 관중수를 조회 합니다.
             라운드별 관중수와 경기별 관중수는 canvas를 이용한 꺾은선 그래프로 구현했고, 경기별 관중수는 콤보박스를 이용해 추가적으로 팀별로 조회               가능 합니다. 
             팀별 관중수는 canvas를 이용한 원 그래프로 구현했습니다.
-  - 상대 전적 : React-dnd를 이용한 드래그 & 드랍 방식으로 선택한 두 팀의 상대 전적을 canvas를 이용한 원 그래프로 조회 합니다.
+  - 상대 전적 : React-dnd를 이용한 드래그 & 드랍 방식이나 콤보 박스로 선택한 두 팀의 상대 전적을 canvas를 이용한 원 그래프로 조회 합니다.

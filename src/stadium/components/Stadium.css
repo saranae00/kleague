@@ -6,5 +6,9 @@
   background: white;
   border: 1px solid gray;
   font-size: 1rem;
-  z-index: 9999;
+  -ms-user-select: none;
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
 }

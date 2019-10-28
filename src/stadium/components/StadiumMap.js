@@ -24,16 +24,23 @@ const StadiumMap = ({ selectedStadium, stadiumList, onClickMarker }) => {
 
   const clickMarker = useCallback(
     item => {
-      onClickMarker(item);
+      if (map) {
+        if (item === '') {
+          map.setLevel(14);
+          map.panTo(new kakao.maps.Coords(523951.25, 1085073.75));
+        } else {
+          onClickMarker(item);
 
-      map.setLevel(4);
-      map.panTo(item.latlng);
+          map.setLevel(4);
+          map.panTo(item.latlng);
+        }
+      }
     },
     [map, onClickMarker]
   );
 
   useEffect(() => {
-    if (selectedStadium !== '') clickMarker(selectedStadium);
+    clickMarker(selectedStadium);
   }, [selectedStadium, clickMarker]);
 
   // target node에 이벤트 핸들러를 등록하는 함수

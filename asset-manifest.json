@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/kleague/static/css/main.493fa46e.chunk.css",
-    "main.js": "/kleague/static/js/main.5679d1cd.chunk.js",
-    "main.js.map": "/kleague/static/js/main.5679d1cd.chunk.js.map",
+    "main.css": "/kleague/static/css/main.d4468bcc.chunk.css",
+    "main.js": "/kleague/static/js/main.2964cc26.chunk.js",
+    "main.js.map": "/kleague/static/js/main.2964cc26.chunk.js.map",
     "runtime-main.js": "/kleague/static/js/runtime-main.81c93da9.js",
     "runtime-main.js.map": "/kleague/static/js/runtime-main.81c93da9.js.map",
-    "static/js/2.aa7c10d6.chunk.js": "/kleague/static/js/2.aa7c10d6.chunk.js",
-    "static/js/2.aa7c10d6.chunk.js.map": "/kleague/static/js/2.aa7c10d6.chunk.js.map",
+    "static/js/2.2820e6a8.chunk.js": "/kleague/static/js/2.2820e6a8.chunk.js",
+    "static/js/2.2820e6a8.chunk.js.map": "/kleague/static/js/2.2820e6a8.chunk.js.map",
     "index.html": "/kleague/index.html",
-    "precache-manifest.b503f649798533da16a6943643bcc5c2.js": "/kleague/precache-manifest.b503f649798533da16a6943643bcc5c2.js",
+    "precache-manifest.1c23f214aa861faf3023d3fdc2df001a.js": "/kleague/precache-manifest.1c23f214aa861faf3023d3fdc2df001a.js",
     "service-worker.js": "/kleague/service-worker.js",
-    "static/css/main.493fa46e.chunk.css.map": "/kleague/static/css/main.493fa46e.chunk.css.map"
+    "static/css/main.d4468bcc.chunk.css.map": "/kleague/static/css/main.d4468bcc.chunk.css.map"
   }
 }

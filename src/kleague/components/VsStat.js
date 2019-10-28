@@ -86,7 +86,16 @@ const VsStat = props => {
     } else {
       const name = e.target.value;
       setHome(name);
-      setDroppedBoxNames(name);
+      setDroppedBoxNames(
+        // 데이터의 최대 갯수가 2개인 큐의 형태로 구현
+        produce(droppedBoxNames, draft => {
+          draft.push(name);
+          if (draft.length > 2) {
+            draft.shift();
+          }
+          return draft;
+        })
+      );
       setDustbins(
         produce(draft => {
           draft[0].lastDroppedItem = {
@@ -106,7 +115,16 @@ const VsStat = props => {
     } else {
       const name = e.target.value;
       setAway(name);
-      setDroppedBoxNames(name);
+      setDroppedBoxNames(
+        // 데이터의 최대 갯수가 2개인 큐의 형태로 구현
+        produce(droppedBoxNames, draft => {
+          draft.push(name);
+          if (draft.length > 2) {
+            draft.shift();
+          }
+          return draft;
+        })
+      );
       setDustbins(
         produce(draft => {
           draft[1].lastDroppedItem = {

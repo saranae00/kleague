@@ -36,7 +36,7 @@ const StadiumMap = ({ selectedStadium, stadiumList, onClickMarker }) => {
         }
       }
     },
-    [map, onClickMarker]
+    [map, onClickMarker, kakao.maps.Coords]
   );
 
   useEffect(() => {

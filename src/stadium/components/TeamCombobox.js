@@ -13,7 +13,7 @@ const TeamCombobox = ({ stadiumList, selectedStadium, selectTeam }) => {
   return (
     <select
       className="stadiumInfo_teamCombobox"
-      value={selectedStadium === '' ? '-1' : selectTeam.id}
+      value={selectedStadium === '' ? '-1' : selectedStadium.id}
       onChange={onSelectedTeam}
     >
       <option value="-1">------</option>

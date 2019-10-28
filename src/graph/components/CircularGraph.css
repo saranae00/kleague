@@ -77,4 +77,9 @@
     display: flex;
     justify-content: center;
   }
+
+  .stadium_wrapper {
+    display: flex;
+    flex-direction: column;
+  }
 }

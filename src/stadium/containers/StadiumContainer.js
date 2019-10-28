@@ -17,6 +17,7 @@ const StadiumContainer = () => {
     getStadiumList().then(response => {
       SetStadiumList(response);
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return <Stadium stadiumList={stadiumList} />;
 };

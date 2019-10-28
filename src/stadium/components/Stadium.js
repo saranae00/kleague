@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import { getStadiumList } from '../util/stadium';
+import React from 'react';
 import StadiumMapContainer from '../containers/StadiumMapContainer';
 import StadiumInfoContainer from '../containers/StadiumInfoContainer';
 

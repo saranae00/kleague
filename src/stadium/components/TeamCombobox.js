@@ -5,7 +5,7 @@ const TeamCombobox = ({ stadiumList, selectedStadium, selectTeam }) => {
     const result = stadiumList.find(item => item.id === e.target.value);
     selectTeam(result);
   };
-  console.log(selectedStadium);
+
   return (
     <select
       className="stadiumInfo_teamCombobox"

@@ -19,7 +19,6 @@ const stadiumReducer = handleActions(
       }),
     [SET_STADIUM_LIST]: (state, action) =>
       produce(state, draft => {
-        console.log(action.payload);
         draft.stadiumList = action.payload;
       })
   },

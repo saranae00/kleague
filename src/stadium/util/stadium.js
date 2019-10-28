@@ -33,3 +33,46 @@ export const getStadiumList = async () => {
     console.log(e);
   }
 };
+
+export const getSearchData = async (stadium, keyword) => {
+  if (stadium) {
+    let result = [];
+    let response = [];
+    let responsePage = 0;
+
+    const placesSearchCB = (data, status, pagination) => {
+      if (status === kakao.maps.services.Status.OK) {
+        // 정상적으로 검색이 완료됐으면
+        // 검색 목록과 마커를 표출합니다
+        response = data;
+
+        // 페이지 번호를 표출합니다
+        responsePage = pagination;
+      } else if (status === kakao.maps.services.Status.ZERO_RESULT) {
+        response = '없음';
+      } else if (status === kakao.maps.services.Status.ERROR) {
+        response = 'error';
+      }
+    };
+    let maxPage = 1;
+    for (let i = 1; i < maxPage + 1; i++) {
+      response = [];
+      responsePage = 0;
+      let options = {
+        page: i,
+        location: stadium.latlng,
+        useMapBounds: true
+      };
+      let ps = new kakao.maps.services.Places();
+      ps.categorySearch(keyword, placesSearchCB, options);
+
+      while (response.length === 0 || responsePage === 0) {
+        await sleep(100);
+      }
+
+      result = result.concat(response);
+      maxPage = parseInt(responsePage.last);
+    }
+    return result;
+  }
+};

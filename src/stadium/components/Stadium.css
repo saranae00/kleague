@@ -3,7 +3,8 @@
   padding-top: 30px;
 }
 
-.stadiumMap_label {
+.stadiumMap_stadium_label,
+.stadiumMap_etc_label {
   background: white;
   border: 1px solid gray;
   font-size: 1rem;
@@ -12,6 +13,14 @@
   -khtml-user-select: none;
   -webkit-user-select: none;
   user-select: none;
+}
+
+.stadiumMap_stadium_label {
+  display: flex;
+  align-items: center;
+  height: 30px;
+  background: cornflowerblue;
+  color: white;
 }
 
 #kakaoMap {
@@ -64,7 +73,61 @@
 
 .stadiumInfo_teamCombobox {
   min-width: 100px;
+  height: 30px;
 }
+
+.etcInfo_wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: calc(100% - 500px);
+}
+
+.etcInfo {
+  width: 400px;
+}
+
+.etcInfo_row {
+  display: flex;
+  width: 100%;
+}
+
+.etcInfo_name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 30px;
+  background: lavender;
+}
+
+.etcInfo_cat {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  height: 30px;
+  font-size: 0.7rem;
+}
+
+.etcInfo_detail {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.etcInfo_title {
+  width: 100px;
+  text-align: center;
+}
+
+.etcInfo_seperator {
+  width: 10px;
+}
+
+.etcInfo_content {
+  width: 290px;
+}
+
 @media all and (max-width: 768px) {
   #kakaoMap {
     width: 100%;
@@ -75,6 +138,14 @@
   }
 
   .stadiumInfo {
+    width: 100%;
+  }
+
+  .etcInfo_wrapper {
+    width: 100%;
+  }
+
+  .etcInfo {
     width: 100%;
   }
 }

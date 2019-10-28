@@ -6,6 +6,7 @@ import Stadium from '../components/Stadium';
 
 const StadiumContainer = () => {
   const stadiumList = useSelector(state => state.stadiumReducer.stadiumList);
+  const type = useSelector(state => state.stadiumReducer.type);
   const dispatch = useDispatch();
 
   const SetStadiumList = useCallback(
@@ -19,7 +20,7 @@ const StadiumContainer = () => {
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  return <Stadium stadiumList={stadiumList} />;
+  return <Stadium stadiumList={stadiumList} type={type} />;
 };
 
 export default StadiumContainer;

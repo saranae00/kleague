@@ -1,8 +1,8 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import './Stadium.css';
 /*eslint no-loop-func: "off"*/
 /*eslint no-unused-vars: "off"*/
-const StadiumMap = ({ stadiumList, onClickMarker }) => {
+const StadiumMap = ({ selectedStadium, stadiumList, onClickMarker }) => {
   const { kakao } = window;
   const mapRef = useRef(null);
   const [map, setMap] = useState(null);
@@ -22,12 +22,19 @@ const StadiumMap = ({ stadiumList, onClickMarker }) => {
     //eslint-disable-next-line
   }, []);
 
-  const clickMarker = item => {
-    onClickMarker(item);
+  const clickMarker = useCallback(
+    item => {
+      onClickMarker(item);
 
-    map.setLevel(4);
-    map.panTo(item.latlng);
-  };
+      map.setLevel(4);
+      map.panTo(item.latlng);
+    },
+    [map, onClickMarker]
+  );
+
+  useEffect(() => {
+    if (selectedStadium !== '') clickMarker(selectedStadium);
+  }, [selectedStadium, clickMarker]);
 
   // target node에 이벤트 핸들러를 등록하는 함수
   function addEventHandle(target, type, callback) {

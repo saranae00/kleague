@@ -55,6 +55,16 @@
 .stadiumInfo_content {
   width: 290px;
 }
+
+.stadiumInfo_teamCombobox_wrapper {
+  position: absolute;
+  padding: 5px;
+  z-index: 99999;
+}
+
+.stadiumInfo_teamCombobox {
+  min-width: 100px;
+}
 @media all and (max-width: 768px) {
   #kakaoMap {
     width: 100%;

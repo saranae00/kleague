@@ -17,6 +17,7 @@ const StadiumMapContainer = ({ stadiumList }) => {
     return () => {
       onClickMarker('');
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <StadiumMap

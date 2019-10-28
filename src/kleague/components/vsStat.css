@@ -53,30 +53,30 @@
     width: 50px;
     height: 100px;
   }
-}
 
-.vsStat_content {
-  flex-wrap: wrap;
-  justify-content: center;
-}
-.vsStat_home_item {
-  order: 2;
-}
+  .vsStat_content {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .vsStat_home_item {
+    order: 2;
+  }
 
-.vsStat_home_dustbin {
-  order: 3;
-}
+  .vsStat_home_dustbin {
+    order: 3;
+  }
 
-.vsStat_graph {
-  order: 1;
-}
-.vsStat_away_dustbin {
-  order: 4;
-}
-.vsStat_away_item {
-  order: 5;
-}
+  .vsStat_graph {
+    order: 1;
+  }
+  .vsStat_away_dustbin {
+    order: 4;
+  }
+  .vsStat_away_item {
+    order: 5;
+  }
 
-.vsStat_graph {
-  width: 90%;
+  .vsStat_graph {
+    width: 90%;
+  }
 }

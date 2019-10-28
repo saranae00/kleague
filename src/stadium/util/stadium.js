@@ -2,8 +2,6 @@ import axios from 'axios';
 const { kakao } = window;
 /*eslint no-loop-func: "off"*/
 
-let geocoder = new kakao.maps.services.Geocoder();
-
 const sleep = ms => {
   return new Promise(resolve => setTimeout(resolve, ms));
 };
@@ -11,6 +9,7 @@ const sleep = ms => {
 export const getStadiumList = async () => {
   try {
     let count = 0;
+    const geocoder = new kakao.maps.services.Geocoder();
     const response = await axios.get('./data/stadiumData.json');
 
     for (let i = 0; i < response.data.length; i++) {

@@ -101,15 +101,7 @@ const StadiumMap = ({ stadiumList, onClickMarker }) => {
   };
   setMarker(stadiumList);
 
-  return (
-    <div>
-      <div
-        ref={mapRef}
-        id="kakaoMap"
-        style={{ width: '500px', height: '500px' }}
-      ></div>
-    </div>
-  );
+  return <div ref={mapRef} id="kakaoMap"></div>;
 };
 
 export default React.memo(StadiumMap);

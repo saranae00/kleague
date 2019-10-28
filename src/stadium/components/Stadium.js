@@ -13,14 +13,10 @@ const Stadium = () => {
   }, []);
   return (
     <div className="stadium_wrapper">
-      <div>
-        {Array.isArray(stadiumList) && (
-          <StadiumMapContainer stadiumList={stadiumList} />
-        )}
-      </div>
-      <div>
-        <StadiumInfoContainer />
-      </div>
+      {Array.isArray(stadiumList) && (
+        <StadiumMapContainer stadiumList={stadiumList} />
+      )}
+      <StadiumInfoContainer />
     </div>
   );
 };

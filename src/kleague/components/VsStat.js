@@ -243,21 +243,23 @@ const VsStat = props => {
               )
           )}
         </div>
-        {mathchList.length > 0 && (
-          <div className="vsStat_graph">
-            <div className="vsStat_text">
-              {`${vsStat.home_name} : ${vsStat.win}승 ${vsStat.draw}무 ${vsStat.lose}패 (${vsStat.score}득점 ${vsStat.lost}실점)`}
-              <br />
-              {`${vsStat.away_name} : ${vsStat.lose}승 ${vsStat.draw}무 ${vsStat.win}패 (${vsStat.lost}득점 ${vsStat.score}실점)`}
-            </div>
-            <div>
-              <CircularGraph
-                data={graphData}
-                width={vsStatCircularGraphWidth}
-              />
-            </div>
-          </div>
-        )}
+        <div className="vsStat_graph">
+          {mathchList.length > 0 && (
+            <Fragment>
+              <div className="vsStat_text">
+                {`${vsStat.home_name} : ${vsStat.win}승 ${vsStat.draw}무 ${vsStat.lose}패 (${vsStat.score}득점 ${vsStat.lost}실점)`}
+                <br />
+                {`${vsStat.away_name} : ${vsStat.lose}승 ${vsStat.draw}무 ${vsStat.win}패 (${vsStat.lost}득점 ${vsStat.score}실점)`}
+              </div>
+              <div>
+                <CircularGraph
+                  data={graphData}
+                  width={vsStatCircularGraphWidth}
+                />
+              </div>
+            </Fragment>
+          )}
+        </div>
         <div className="vsStat_away_dustbin">
           {dustbins.map(
             ({ accepts, lastDroppedItem }, index) =>

@@ -6,7 +6,9 @@ const StadiumInfoContainer = () => {
   const selectedStadium = useSelector(
     state => state.stadiumReducer.selectedStadium
   );
-  return <StadiumInfo selectedStadium={selectedStadium} />;
+  return (
+    selectedStadium !== '' && <StadiumInfo selectedStadium={selectedStadium} />
+  );
 };
 
 export default StadiumInfoContainer;

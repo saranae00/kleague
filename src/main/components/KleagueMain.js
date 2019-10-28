@@ -5,7 +5,7 @@ import './kleague.css';
 import MatchInfoContainer from '../../kleague/containers/MatchInfoContainer';
 import cn from 'classnames';
 import Rangking from '../../kleague/components/Rangking';
-import Stadium from '../../stadium/components/Stadium';
+import StadiumContainer from '../../stadium/containers/StadiumContainer';
 
 const KleagueMain = () => {
   const [matchList, setMatchList] = useState(null);
@@ -15,7 +15,7 @@ const KleagueMain = () => {
     {
       id: 0,
       subject: '경기장 정보',
-      content: <Stadium />
+      content: <StadiumContainer />
     },
     {
       id: 1,

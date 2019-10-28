@@ -69,4 +69,12 @@
   #kakaoMap {
     width: 100%;
   }
+
+  .stadiumInfo_wrapper {
+    width: 100%;
+  }
+
+  .stadiumInfo {
+    width: 100%;
+  }
 }

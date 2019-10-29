@@ -1,4 +1,5 @@
 import React from 'react';
+import CatBtnContainer from '../containers/CatBtnContainer';
 
 const StadiumInfo = ({ selectedStadium }) => {
   return (
@@ -31,6 +32,9 @@ const StadiumInfo = ({ selectedStadium }) => {
           <div className="stadiumInfo_addr stadiumInfo_content">
             {selectedStadium.addr}
           </div>
+        </div>
+        <div className="stadiumInfo_row">
+          <CatBtnContainer />
         </div>
       </div>
     </div>

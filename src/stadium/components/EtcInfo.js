@@ -1,7 +1,6 @@
 import React from 'react';
 
 const StadiumInfo = ({ selectedEtc }) => {
-  console.log(selectedEtc);
   return (
     <div className="etcInfo_wrapper">
       <div className="etcInfo">

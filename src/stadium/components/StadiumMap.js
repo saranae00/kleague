@@ -8,7 +8,9 @@ const StadiumMap = ({
   stadiumList,
   onClickMarker,
   onClickEtcMarker,
-  etcMarker
+  etcMarker,
+  viewEtc,
+  onSetViewEtc
 }) => {
   const { kakao } = window;
   const mapRef = useRef(null);
@@ -31,7 +33,6 @@ const StadiumMap = ({
             map.setLevel(5);
             map.panTo(item.latlng);
           } else {
-            console.log(item);
             onClickEtcMarker(item);
             map.setLevel(5);
             map.panTo(new kakao.maps.LatLng(item.y, item.x));
@@ -99,14 +100,22 @@ const StadiumMap = ({
       }
 
       // 커스텀 오버레이를 생성
-      const customOverlay = new kakao.maps.CustomOverlay({
-        map: map,
-        position: coords,
-        content: content,
-        yAnchor: type === 'stadium' ? 2.5 : 3
-      });
+      let customOverlay;
+      if (type === 'stadium' || viewEtc !== 'none')
+        customOverlay = new kakao.maps.CustomOverlay({
+          map: map,
+          position: coords,
+          content: content,
+          yAnchor: type === 'stadium' ? 2.5 : 3
+        });
+
       let marker;
-      if (type !== 'stadium') {
+      if (type === 'stadium') {
+        // 마커를 생성합니다
+        marker = new kakao.maps.Marker({
+          position: coords
+        });
+      } else if (viewEtc !== 'none') {
         let imageSrc = './data/marker.svg', // 마커 이미지 url, 스프라이트 이미지를 씁니다
           imageSize = new kakao.maps.Size(50, 50), // 마커 이미지의 크기
           imgOptions = {
@@ -121,53 +130,50 @@ const StadiumMap = ({
           position: coords, // 마커의 위치
           image: markerImage
         });
-      } else {
-        // 마커를 생성합니다
-        marker = new kakao.maps.Marker({
-          position: coords
+      }
+      if (marker) {
+        // 마커가 지도 위에 표시되도록 설정
+        marker.setMap(map);
+
+        // 마커 배열에 추가
+        if (type === 'stadium') {
+          markerList.push({
+            marker: marker,
+            customOverlay: customOverlay
+          });
+          // setMarkerList(
+          //   produce(markerList, draft => {
+          //     draft.push(marker);
+          //   })
+          // );
+        } else if (viewEtc !== 'none') {
+          etcMarkerList.push({
+            marker: marker,
+            customOverlay: customOverlay
+          });
+          // setEtcMarkerList(
+          //   produce(etcMarkerList, draft => {
+          //     draft.push(marker);
+          //   })
+          // );
+        }
+
+        // 이벤트 핸들러 등록
+        kakao.maps.event.addListener(marker, 'click', () => {
+          if (!isDrag) {
+            clickMarker(itemList[i], type);
+          }
+        });
+        addEventHandle(content, 'mousedown', onOverlayMouseDown);
+        addEventHandle(content, 'mousemove', onOverlayMouseMove);
+        addEventHandle(content, 'mouseup', () => {
+          isMouseDown = false;
+          if (!isDrag) {
+            clickMarker(itemList[i], type);
+          }
+          isDrag = false;
         });
       }
-      // 마커가 지도 위에 표시되도록 설정
-      marker.setMap(map);
-
-      // 마커 배열에 추가
-      if (type === 'stadium') {
-        markerList.push({
-          marker: marker,
-          customOverlay: customOverlay
-        });
-        // setMarkerList(
-        //   produce(markerList, draft => {
-        //     draft.push(marker);
-        //   })
-        // );
-      } else {
-        etcMarkerList.push({
-          marker: marker,
-          customOverlay: customOverlay
-        });
-        // setEtcMarkerList(
-        //   produce(etcMarkerList, draft => {
-        //     draft.push(marker);
-        //   })
-        // );
-      }
-
-      // 이벤트 핸들러 등록
-      kakao.maps.event.addListener(marker, 'click', () => {
-        if (!isDrag) {
-          clickMarker(itemList[i], type);
-        }
-      });
-      addEventHandle(content, 'mousedown', onOverlayMouseDown);
-      addEventHandle(content, 'mousemove', onOverlayMouseMove);
-      addEventHandle(content, 'mouseup', () => {
-        isMouseDown = false;
-        if (!isDrag) {
-          clickMarker(itemList[i], type);
-        }
-        isDrag = false;
-      });
     }
   };
 
@@ -185,12 +191,14 @@ const StadiumMap = ({
 
   useEffect(() => {
     clickMarker(selectedStadium, 'stadium');
+    onSetViewEtc('none');
   }, [selectedStadium, clickMarker]);
 
   // 경기장 외의 마커 삭제
   useEffect(() => {
     return () => {
       removeMarker(etcMarkerList);
+      onClickEtcMarker('');
     };
   });
   setMarker(stadiumList, 'stadium');

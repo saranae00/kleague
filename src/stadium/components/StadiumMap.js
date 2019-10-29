@@ -192,7 +192,7 @@ const StadiumMap = ({
   useEffect(() => {
     clickMarker(selectedStadium, 'stadium');
     onSetViewEtc('none');
-  }, [selectedStadium, clickMarker]);
+  }, [selectedStadium, clickMarker, onSetViewEtc]);
 
   // 경기장 외의 마커 삭제
   useEffect(() => {

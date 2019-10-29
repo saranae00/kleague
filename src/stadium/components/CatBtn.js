@@ -26,7 +26,7 @@ const CatBtn = ({ selectedStadium, onSetViewEtc }) => {
   useEffect(() => {
     isCoffeeBtnClick && setIsCoffeeBtnClick(false);
     isRestBtnClick && setIsRestBtnClick(false);
-  }, [selectedStadium]);
+  }, [selectedStadium, isCoffeeBtnClick, isRestBtnClick]);
 
   return (
     <div className="catBtn_wrapper">

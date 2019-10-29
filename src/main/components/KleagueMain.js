@@ -6,19 +6,23 @@ import MatchInfoContainer from '../../kleague/containers/MatchInfoContainer';
 import cn from 'classnames';
 import Rangking from '../../kleague/components/Rangking';
 import StadiumContainer from '../../stadium/containers/StadiumContainer';
+import { Link } from 'react-router-dom';
 
-const KleagueMain = () => {
+const KleagueMain = ({ match }) => {
   const [matchList, setMatchList] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+  const { menuName } = match.params;
 
   const tab = [
     {
       id: 0,
+      route: '/stadium',
       subject: '경기장 정보',
       content: <StadiumContainer />
     },
     {
       id: 1,
+      route: '/matchInfo',
       subject: '경기 정보',
       content: (
         <Fragment>
@@ -33,6 +37,7 @@ const KleagueMain = () => {
     },
     {
       id: 2,
+      route: '/stat',
       subject: '통계',
       content: <Rangking matchList={matchList} />
     }
@@ -62,6 +67,26 @@ const KleagueMain = () => {
     getMatchList();
   }, []);
 
+  useEffect(() => {
+    (() => {
+      switch (menuName) {
+        case 'stadium':
+          changeItem(0);
+          break;
+        case 'matchInfo':
+          changeItem(1);
+
+          break;
+        case 'stat':
+          changeItem(2);
+          break;
+        default:
+          changeItem(0);
+          break;
+      }
+    })(menuName);
+  }, [menuName, changeItem]);
+
   if (isLoading) {
     return <div>경기 데이터 로딩중...</div>;
   }
@@ -76,16 +101,20 @@ const KleagueMain = () => {
         <div className="main">
           <div className="main_tab_buttons">
             {tab.map((item, index) => (
-              <div
-                className={cn(
-                  'main_tab_buttons_item',
-                  currentItem.id === index && 'main_tab_buttons_item_active'
-                )}
+              <Link
+                className="link_main_tab_buttons_item"
                 key={index}
-                onClick={() => changeItem(index)}
+                to={item.route}
               >
-                {item.subject}
-              </div>
+                <div
+                  className={cn(
+                    'main_tab_buttons_item',
+                    currentItem.id === index && 'main_tab_buttons_item_active'
+                  )}
+                >
+                  {item.subject}
+                </div>
+              </Link>
             ))}
           </div>
           <div>{currentItem.content}</div>

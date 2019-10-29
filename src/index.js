@@ -7,13 +7,16 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import rootReducer from './modules';
 import { devToolsEnhancer } from 'redux-devtools-extension';
+import { BrowserRouter } from 'react-router-dom';
 
 const store = createStore(rootReducer, devToolsEnhancer());
 
 ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
+  <BrowserRouter>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </BrowserRouter>,
   document.getElementById('root')
 );
 

@@ -29,7 +29,7 @@ const StadiumInfo = ({ selectedEtc }) => {
         <div className="etcInfo_row">
           <div className="etcInfo_detail">
             <a href={selectedEtc.place_url} target="_new">
-              상세보기
+              <button className="etcInfo_detail_btn">상세보기</button>
             </a>
           </div>
         </div>

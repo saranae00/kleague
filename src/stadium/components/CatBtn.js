@@ -26,7 +26,8 @@ const CatBtn = ({ selectedStadium, onSetViewEtc }) => {
   useEffect(() => {
     isCoffeeBtnClick && setIsCoffeeBtnClick(false);
     isRestBtnClick && setIsRestBtnClick(false);
-  }, [selectedStadium, isCoffeeBtnClick, isRestBtnClick]);
+    // eslint-disable-next-line
+  }, [selectedStadium]);
 
   return (
     <div className="catBtn_wrapper">

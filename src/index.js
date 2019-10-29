@@ -12,7 +12,7 @@ import { BrowserRouter } from 'react-router-dom';
 const store = createStore(rootReducer, devToolsEnhancer());
 
 ReactDOM.render(
-  <BrowserRouter>
+  <BrowserRouter basename={process.env.PUBLIC_URL}>
     <Provider store={store}>
       <App />
     </Provider>

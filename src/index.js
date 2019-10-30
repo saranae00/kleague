@@ -7,16 +7,16 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import rootReducer from './modules';
 import { devToolsEnhancer } from 'redux-devtools-extension';
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 
 const store = createStore(rootReducer, devToolsEnhancer());
 
 ReactDOM.render(
-  <BrowserRouter basename={process.env.PUBLIC_URL}>
+  <HashRouter basename={process.env.PUBLIC_URL} hashType={'noslash'}>
     <Provider store={store}>
       <App />
     </Provider>
-  </BrowserRouter>,
+  </HashRouter>,
   document.getElementById('root')
 );
 

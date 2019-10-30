@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "6e3a6877f2863f38d2e9dbef3e8b1f4d",
+    "revision": "559f8c0203100f0cf77eb83393d9e1bc",
     "url": "/kleague/index.html"
   },
   {
-    "revision": "a8c88230dbab21d39c48",
+    "revision": "378864c3807e9aca0e1a",
     "url": "/kleague/static/css/main.8e105077.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/kleague/static/js/2.df9a62d5.chunk.js"
   },
   {
-    "revision": "a8c88230dbab21d39c48",
-    "url": "/kleague/static/js/main.42f76d0e.chunk.js"
+    "revision": "378864c3807e9aca0e1a",
+    "url": "/kleague/static/js/main.a5ce40df.chunk.js"
   },
   {
     "revision": "2450b4277130e8d7103e",

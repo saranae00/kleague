@@ -12,7 +12,7 @@ import { HashRouter } from 'react-router-dom';
 const store = createStore(rootReducer, devToolsEnhancer());
 
 ReactDOM.render(
-  <HashRouter basename={process.env.PUBLIC_URL} hashType={'noslash'}>
+  <HashRouter hashType={'noslash'}>
     <Provider store={store}>
       <App />
     </Provider>

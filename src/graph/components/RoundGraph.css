@@ -7,6 +7,12 @@
   justify-content: center;
   width: 100%;
 }
+
+.rangking_round_row_title {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+}
 .rangking_round_row_combo {
   display: flex;
   justify-content: flex-end;

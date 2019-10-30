@@ -374,7 +374,7 @@ const RoundGraph = value => {
 
   const canvasWidth =
     document.documentElement.clientWidth > 768
-      ? parseInt(document.documentElement.clientWidth * 0.5)
+      ? parseInt(document.documentElement.clientWidth * 0.8)
       : parseInt(document.documentElement.clientWidth * 0.9);
   return (
     <Fragment>
@@ -386,7 +386,7 @@ const RoundGraph = value => {
         <FloatLabelSpectatorByRoundContainer />
       )}
       <div className="rangking_round">
-        <div className="rangking_round_row">
+        <div className="rangking_round_row rangking_round_row_title">
           <div className="rangking_round_title">{title}</div>
         </div>
         <div className="rangking_round_row_combo">

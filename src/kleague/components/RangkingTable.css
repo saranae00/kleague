@@ -1,22 +1,21 @@
 .rangkingTable {
-  display: flex;
+  /* display: flex; */
   width: 100%;
+  border-collapse: collapse;
 }
 
 .rangkingTable tbody {
-  display: flex;
-  flex-direction: column;
+  /* display: flex;
+  flex-direction: column; */
   width: 100%;
 }
 
 .rangkingTable tr {
-  display: flex;
   width: 100%;
 }
 
 .rangkingTable tr td {
-  display: flex;
-  justify-content: center;
+  text-align: center;
 }
 
 .rangkingTable_row {
@@ -28,26 +27,41 @@
   color: white;
 }
 
+.rangkingTable_split {
+  width: 40px;
+}
 .rangkingTable_rank {
-  width: 19%;
+  width: 40px;
 }
 
 .rangkingTable_name {
-  width: 26%;
+  width: 20%;
 }
 
 .rangkingTable_winningpoint {
-  width: 19%;
+  width: calc(80% - 80px) / 6;
 }
 
-.rangkingTable_yellow {
-  width: 19%;
+.rangkingTable_matchNum {
+  width: calc(80% - 80px) / 6;
 }
 
-.rangkingTable_red {
-  width: 19%;
+.rangkingTable_goals {
+  width: calc(80% - 80px) / 6;
+}
+
+.rangkingTable_losts {
+  width: calc(80% - 80px) / 6;
+}
+
+.rangkingTable_goalsLosts {
+  width: calc(80% - 80px) / 6;
 }
 
 .rangkingTable_content:nth-child(-2n + 13) {
   background: rgba(153, 204, 204, 0.3);
+}
+
+.rangkingTable_content_split {
+  border-top: 1px solid red;
 }

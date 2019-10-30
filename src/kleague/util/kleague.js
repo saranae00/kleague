@@ -2,7 +2,7 @@ import { team } from './teamSkeleton';
 import { vsStatSkeleton } from './vsStatSkeleton';
 
 // 리그내 팀 갯수
-const _MAX_TEAM = 12;
+export const _MAX_TEAM = 12;
 // 스플릿이 나눠질 라운드
 const _SPLIT_ROUND_NUM = 33;
 
@@ -38,7 +38,7 @@ export const getMaxRound = matchList => {
 };
 
 // 스플릿이 나눠질 팀 갯수(스플릿A 팀의 갯수)
-const splitTeamsNum = () => _MAX_TEAM / 2;
+export const splitTeamsNum = () => parseInt(_MAX_TEAM / 2);
 
 const calWinningPointByMatch = (item, arrTeam) => {
   let homeTeam = arrTeam.find(vlaue => {

@@ -4,28 +4,6 @@ import './RangkingTable.css';
 const RangkingTable = props => {
   const byTotal = props.byTotal;
 
-  const sortTable = (a, b) => {
-    // 승점 순
-    if (a.winningPoint !== b.winningPoint) {
-      return b.winningPoint - a.winningPoint;
-    } else {
-      // 승점이 같을 경우, 다득점
-      if (a.getScore !== b.getScore) {
-        return b.getScore - a.getScore;
-      } else {
-        //득점이 같을 경우, 득실차
-        if (a.getScore - a.lostScore !== b.getScore - b.lostScore) {
-          return b.getScore - b.lostScore - (a.getScore - a.lostScore);
-        } else {
-          //득실차가 같을 경우, 다승 순
-          return b.win - a.win;
-        }
-      }
-    }
-  };
-
-  byTotal.sort((a, b) => sortTable(a, b));
-
   return (
     <Fragment>
       <table className="rangkingTable">

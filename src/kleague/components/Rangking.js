@@ -13,7 +13,8 @@ import {
   rankArrayByRound,
   getSpectatorByRound,
   getSpectatorByMatch,
-  getSpectatorArrayByTeam
+  getSpectatorArrayByTeam,
+  getTeamArrayTotal
 } from '../util/kleague';
 import { useTab } from '../../hooks/hooks';
 import { DndProvider } from 'react-dnd';
@@ -23,7 +24,7 @@ import HTML5Backend from 'react-dnd-html5-backend';
 const Rangking = props => {
   const matchList = props.matchList;
   const maxRound = getMaxRound(matchList);
-  const teamArrayTotal = calTeamArrayTotal(maxRound, matchList);
+  const teamArrayTotal = getTeamArrayTotal(maxRound, matchList);
   const rankByRound = rankArrayByRound(maxRound, matchList);
   const spectatorByRound = getSpectatorByRound(maxRound, matchList);
   const spectatorByMatch = getSpectatorByMatch(matchList);
@@ -147,6 +148,8 @@ const Rangking = props => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [matchList]);
 
+  const a = getTeamArrayTotal(maxRound, matchList);
+  console.log(a);
   return (
     <Fragment>
       <div className="tab_buttons">

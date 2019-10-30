@@ -11743,5 +11743,690 @@
     ],
     "home_card": [],
     "away_card": [{ "player": "박병현", "time": "후3", "type": "yellow" }]
+  },
+  {
+    "match_date": "2019-10-19",
+    "round": "34",
+    "match_time": "14:00",
+    "stadium": "수원 월드컵",
+    "home": "수원",
+    "away": "경남",
+    "home_score": "2",
+    "away_score": "1",
+    "spectator": "3353",
+    "home_stat": {
+      "possession": "55",
+      "shooting": "15",
+      "shooting_on_target": "6",
+      "foul": "12",
+      "yellow": "1",
+      "red": "0",
+      "conerkick": "8",
+      "freekick": "12",
+      "offside": "0"
+    },
+    "away_stat": {
+      "possession": "45",
+      "shooting": "6",
+      "shooting_on_target": "1",
+      "foul": "10",
+      "yellow": "1",
+      "red": "0",
+      "conerkick": "4",
+      "freekick": "13",
+      "offside": "3"
+    },
+    "home_goal": [
+      {
+        "player": "타가트",
+        "time": "전43",
+        "own": "false",
+        "assist_player": ""
+      },
+      {
+        "player": "염기훈",
+        "time": "후27",
+        "own": "false",
+        "assist_player": ""
+      }
+    ],
+    "away_goal": [
+      {
+        "player": "제리치",
+        "time": "전25",
+        "own": "false",
+        "assist_player": ""
+      }
+    ],
+    "home_card": [{ "player": "이종성", "time": "후44", "type": "yellow" }],
+    "away_card": [{ "player": "조재철", "time": "전22", "type": "yellow" }]
+  },
+  {
+    "match_date": "2019-10-19",
+    "round": "34",
+    "match_time": "16:00",
+    "stadium": "탄천 종합",
+    "home": "성남",
+    "away": "인천",
+    "home_score": "0",
+    "away_score": "1",
+    "spectator": "4301",
+    "home_stat": {
+      "possession": "55",
+      "shooting": "21",
+      "shooting_on_target": "13",
+      "foul": "8",
+      "yellow": "3",
+      "red": "0",
+      "conerkick": "3",
+      "freekick": "8",
+      "offside": "0"
+    },
+    "away_stat": {
+      "possession": "45",
+      "shooting": "3",
+      "shooting_on_target": "1",
+      "foul": "18",
+      "yellow": "2",
+      "red": "0",
+      "conerkick": "4",
+      "freekick": "20",
+      "offside": "2"
+    },
+    "home_goal": [
+      { "player": "에델", "time": "후47", "own": "false", "assist_player": "" }
+    ],
+    "away_goal": [
+      {
+        "player": "무고사",
+        "time": "후28",
+        "own": "false",
+        "assist_player": ""
+      }
+    ],
+    "home_card": [
+      { "player": "문지환", "time": "전1", "type": "yellow" },
+      { "player": "이태희", "time": "전4", "type": "yellow" },
+      { "player": "임채민", "time": "후28", "type": "yellow" }
+    ],
+    "away_card": [
+      { "player": "마하지", "time": "전19", "type": "yellow" },
+      { "player": "장윤호", "time": "후20", "type": "yellow" }
+    ]
+  },
+  {
+    "match_date": "2019-10-19",
+    "round": "34",
+    "match_time": "18:00",
+    "stadium": "상주 시민",
+    "home": "상주",
+    "away": "제주",
+    "home_score": "2",
+    "away_score": "1",
+    "spectator": "1161",
+    "home_stat": {
+      "possession": "47",
+      "shooting": "15",
+      "shooting_on_target": "8",
+      "foul": "8",
+      "yellow": "1",
+      "red": "0",
+      "conerkick": "6",
+      "freekick": "10",
+      "offside": "2"
+    },
+    "away_stat": {
+      "possession": "53",
+      "shooting": "14",
+      "shooting_on_target": "5",
+      "foul": "15",
+      "yellow": "3",
+      "red": "0",
+      "conerkick": "2",
+      "freekick": "16",
+      "offside": "1"
+    },
+    "home_goal": [
+      {
+        "player": "박용지",
+        "time": "전30",
+        "own": "false",
+        "assist_player": ""
+      },
+      {
+        "player": "김건희",
+        "time": "후39",
+        "own": "false",
+        "assist_player": "이민기"
+      }
+    ],
+    "away_goal": [
+      {
+        "player": "안현범",
+        "time": "전28",
+        "own": "false",
+        "assist_player": "이근호"
+      }
+    ],
+    "home_card": [{ "player": "안진범", "time": "전32", "type": "yellow" }],
+    "away_card": [
+      { "player": "백동규", "time": "후9", "type": "yellow" },
+      { "player": "윤일록", "time": "후31", "type": "yellow" },
+      { "player": "김지운", "time": "후38", "type": "yellow" }
+    ]
+  },
+  {
+    "match_date": "2019-10-20",
+    "round": "34",
+    "match_time": "14:00",
+    "stadium": "춘천 송암",
+    "home": "강원",
+    "away": "서울",
+    "home_score": "3",
+    "away_score": "2",
+    "spectator": "2745",
+    "home_stat": {
+      "possession": "63",
+      "shooting": "14",
+      "shooting_on_target": "6",
+      "foul": "12",
+      "yellow": "2",
+      "red": "0",
+      "conerkick": "6",
+      "freekick": "13",
+      "offside": "1"
+    },
+    "away_stat": {
+      "possession": "37",
+      "shooting": "8",
+      "shooting_on_target": "4",
+      "foul": "13",
+      "yellow": "3",
+      "red": "0",
+      "conerkick": "3",
+      "freekick": "15",
+      "offside": "2"
+    },
+    "home_goal": [
+      {
+        "player": "이현식",
+        "time": "후6",
+        "own": "false",
+        "assist_player": "이영재"
+      },
+      {
+        "player": "이영재",
+        "time": "후41",
+        "own": "false",
+        "assist_player": ""
+      },
+      {
+        "player": "이현식",
+        "time": "후46",
+        "own": "false",
+        "assist_player": "정승용"
+      }
+    ],
+    "away_goal": [
+      {
+        "player": "이인규",
+        "time": "전20",
+        "own": "false",
+        "assist_player": "오스마르"
+      },
+      {
+        "player": "박주영",
+        "time": "후37",
+        "own": "false",
+        "assist_player": "이명주"
+      }
+    ],
+    "home_card": [
+      { "player": "빌비야", "time": "후13", "type": "yellow" },
+      { "player": "정승용", "time": "후18", "type": "yellow" }
+    ],
+    "away_card": [
+      { "player": "주세종", "time": "후41", "type": "yellow" },
+      { "player": "알리바예프", "time": "후48", "type": "yellow" }
+    ]
+  },
+  {
+    "match_date": "2019-10-20",
+    "round": "34",
+    "match_time": "16:00",
+    "stadium": "전주 월드컵",
+    "home": "전북",
+    "away": "포항",
+    "home_score": "3",
+    "away_score": "0",
+    "spectator": "10078",
+    "home_stat": {
+      "possession": "52",
+      "shooting": "15",
+      "shooting_on_target": "12",
+      "foul": "17",
+      "yellow": "1",
+      "red": "0",
+      "conerkick": "5",
+      "freekick": "18",
+      "offside": "1"
+    },
+    "away_stat": {
+      "possession": "48",
+      "shooting": "11",
+      "shooting_on_target": "6",
+      "foul": "15",
+      "yellow": "1",
+      "red": "0",
+      "conerkick": "2",
+      "freekick": "17",
+      "offside": "2"
+    },
+    "home_goal": [
+      {
+        "player": "로페즈",
+        "time": "전12",
+        "own": "false",
+        "assist_player": "문선민"
+      },
+      {
+        "player": "문선민",
+        "time": "후3",
+        "own": "false",
+        "assist_player": ""
+      },
+      {
+        "player": "권경원",
+        "time": "후23",
+        "own": "false",
+        "assist_player": ""
+      }
+    ],
+    "away_goal": [],
+    "home_card": [{ "player": "손준호", "time": "후29", "type": "yellow" }],
+    "away_card": [{ "player": "하창래", "time": "후30", "type": "yellow" }]
+  },
+  {
+    "match_date": "2019-10-20",
+    "round": "34",
+    "match_time": "18:00",
+    "stadium": "DGB대구은행파크",
+    "home": "대구",
+    "away": "울산",
+    "home_score": "1",
+    "away_score": "2",
+    "spectator": "11022",
+    "home_stat": {
+      "possession": "48",
+      "shooting": "18",
+      "shooting_on_target": "7",
+      "foul": "16",
+      "yellow": "3",
+      "red": "0",
+      "conerkick": "3",
+      "freekick": "18",
+      "offside": "2"
+    },
+    "away_stat": {
+      "possession": "52",
+      "shooting": "6",
+      "shooting_on_target": "4",
+      "foul": "19",
+      "yellow": "2",
+      "red": "0",
+      "conerkick": "3",
+      "freekick": "19",
+      "offside": "0"
+    },
+    "home_goal": [
+      {
+        "player": "세징야",
+        "time": "후3",
+        "own": "false",
+        "assist_player": "류재문"
+      }
+    ],
+    "away_goal": [
+      { "player": "믹스", "time": "전22", "own": "false", "assist_player": "" },
+      {
+        "player": "주민규",
+        "time": "후35",
+        "own": "false",
+        "assist_player": "김보경"
+      }
+    ],
+    "home_card": [
+      { "player": "김우석", "time": "전5", "type": "yellow" },
+      { "player": "김동진", "time": "후27", "type": "yellow" },
+      { "player": "세징야", "time": "후47", "type": "yellow" }
+    ],
+    "away_card": [
+      { "player": "김보경", "time": "후40", "type": "yellow" },
+      { "player": "박주호", "time": "후50", "type": "yellow" }
+    ]
+  },
+  {
+    "match_date": "2019-10-26",
+    "round": "35",
+    "match_time": "14:00",
+    "stadium": "포항 스틸야드",
+    "home": "포항",
+    "away": "대구",
+    "home_score": "0",
+    "away_score": "0",
+    "spectator": "8365",
+    "home_stat": {
+      "possession": "51",
+      "shooting": "7",
+      "shooting_on_target": "2",
+      "foul": "10",
+      "yellow": "1",
+      "red": "1",
+      "conerkick": "3",
+      "freekick": "10",
+      "offside": "0"
+    },
+    "away_stat": {
+      "possession": "49",
+      "shooting": "6",
+      "shooting_on_target": "2",
+      "foul": "18",
+      "yellow": "2",
+      "red": "0",
+      "conerkick": "3",
+      "freekick": "19",
+      "offside": "1"
+    },
+    "home_goal": [],
+    "away_goal": [],
+    "home_card": [
+      { "player": "이상기", "time": "전46", "type": "red" },
+      { "player": "심상민", "time": "후39", "type": "yellow" }
+    ],
+    "away_card": [
+      { "player": "신창무", "time": "전29", "type": "yellow" },
+      { "player": "김선민", "time": "전36", "type": "yellow" }
+    ]
+  },
+  {
+    "match_date": "2019-10-26",
+    "round": "35",
+    "match_time": "16:00",
+    "stadium": "전주 월드컵",
+    "home": "전북",
+    "away": "서울",
+    "home_score": "1",
+    "away_score": "1",
+    "spectator": "12142",
+    "home_stat": {
+      "possession": "72",
+      "shooting": "15",
+      "shooting_on_target": "5",
+      "foul": "7",
+      "yellow": "1",
+      "red": "0",
+      "conerkick": "11",
+      "freekick": "7",
+      "offside": "0"
+    },
+    "away_stat": {
+      "possession": "28",
+      "shooting": "6",
+      "shooting_on_target": "4",
+      "foul": "12",
+      "yellow": "2",
+      "red": "0",
+      "conerkick": "2",
+      "freekick": "14",
+      "offside": "2"
+    },
+    "home_goal": [
+      {
+        "player": "이동국",
+        "time": "후39",
+        "own": "false",
+        "assist_player": ""
+      }
+    ],
+    "away_goal": [
+      {
+        "player": "황현수",
+        "time": "전19",
+        "own": "false",
+        "assist_player": "오스마르"
+      }
+    ],
+    "home_card": [{ "player": "권경원", "time": "전11", "type": "yellow" }],
+    "away_card": [
+      { "player": "고요한", "time": "전31", "type": "yellow" },
+      { "player": "고광민", "time": "후36", "type": "yellow" }
+    ]
+  },
+  {
+    "match_date": "2019-10-26",
+    "round": "35",
+    "match_time": "18:00",
+    "stadium": "울산 종합",
+    "home": "울산",
+    "away": "강원",
+    "home_score": "2",
+    "away_score": "1",
+    "spectator": "10519",
+    "home_stat": {
+      "possession": "29",
+      "shooting": "7",
+      "shooting_on_target": "6",
+      "foul": "12",
+      "yellow": "2",
+      "red": "0",
+      "conerkick": "5",
+      "freekick": "13",
+      "offside": "1"
+    },
+    "away_stat": {
+      "possession": "71",
+      "shooting": "9",
+      "shooting_on_target": "6",
+      "foul": "7",
+      "yellow": "1",
+      "red": "0",
+      "conerkick": "7",
+      "freekick": "7",
+      "offside": "0"
+    },
+    "home_goal": [
+      {
+        "player": "주니오",
+        "time": "전2",
+        "own": "false",
+        "assist_player": "주민규"
+      },
+      {
+        "player": "주니오",
+        "time": "전10",
+        "own": "false",
+        "assist_player": "김태환"
+      }
+    ],
+    "away_goal": [
+      {
+        "player": "빌비야",
+        "time": "전45",
+        "own": "false",
+        "assist_player": ""
+      }
+    ],
+    "home_card": [
+      { "player": "강민수", "time": "전44", "type": "yellow" },
+      { "player": "주니오", "time": "후38", "type": "yellow" }
+    ],
+    "away_card": [{ "player": "정승용", "time": "후8", "type": "yellow" }]
+  },
+  {
+    "match_date": "2019-10-27",
+    "round": "35",
+    "match_time": "14:00",
+    "stadium": "상주 시민",
+    "home": "상주",
+    "away": "성남",
+    "home_score": "0",
+    "away_score": "1",
+    "spectator": "1263",
+    "home_stat": {
+      "possession": "63",
+      "shooting": "7",
+      "shooting_on_target": "1",
+      "foul": "9",
+      "yellow": "0",
+      "red": "1",
+      "conerkick": "1",
+      "freekick": "10",
+      "offside": "1"
+    },
+    "away_stat": {
+      "possession": "37",
+      "shooting": "10",
+      "shooting_on_target": "5",
+      "foul": "12",
+      "yellow": "1",
+      "red": "0",
+      "conerkick": "6",
+      "freekick": "12",
+      "offside": "0"
+    },
+    "home_goal": [],
+    "away_goal": [
+      {
+        "player": "서보민",
+        "time": "후35",
+        "own": "false",
+        "assist_player": "주현우"
+      },
+      { "player": "에델", "time": "후47", "own": "false", "assist_player": "" }
+    ],
+    "home_card": [{ "player": "권완규", "time": "후33", "type": "red" }],
+    "away_card": [{ "player": "임승겸", "time": "전19", "type": "yellow" }]
+  },
+  {
+    "match_date": "2019-10-27",
+    "round": "35",
+    "match_time": "15:00",
+    "stadium": "창원 축구센터",
+    "home": "경남",
+    "away": "제주",
+    "home_score": "2",
+    "away_score": "2",
+    "spectator": "4041",
+    "home_stat": {
+      "possession": "45",
+      "shooting": "7",
+      "shooting_on_target": "2",
+      "foul": "15",
+      "yellow": "3",
+      "red": "0",
+      "conerkick": "3",
+      "freekick": "16",
+      "offside": "1"
+    },
+    "away_stat": {
+      "possession": "55",
+      "shooting": "9",
+      "shooting_on_target": "5",
+      "foul": "20",
+      "yellow": "2",
+      "red": "0",
+      "conerkick": "3",
+      "freekick": "20",
+      "offside": "0"
+    },
+    "home_goal": [
+      {
+        "player": "제리치",
+        "time": "전34",
+        "own": "false",
+        "assist_player": "고경민"
+      },
+      { "player": "김원일", "time": "후33", "own": "true", "assist_player": "" }
+    ],
+    "away_goal": [
+      {
+        "player": "윤빛가람",
+        "time": "전27",
+        "own": "false",
+        "assist_player": ""
+      },
+      {
+        "player": "아길라르",
+        "time": "후22",
+        "own": "false",
+        "assist_player": "윤일록"
+      }
+    ],
+    "home_card": [
+      { "player": "고경민", "time": "후7", "type": "yellow" },
+      { "player": "이재명", "time": "후44", "type": "yellow" },
+      { "player": "우주성", "time": "후45", "type": "yellow" }
+    ],
+    "away_card": [
+      { "player": "안현범", "time": "전43", "type": "yellow" },
+      { "player": "백동규", "time": "후44", "type": "yellow" }
+    ]
+  },
+  {
+    "match_date": "2019-10-27",
+    "round": "35",
+    "match_time": "16:00",
+    "stadium": "인천 전용",
+    "home": "인천",
+    "away": "수원",
+    "home_score": "1",
+    "away_score": "1",
+    "spectator": "11132",
+    "home_stat": {
+      "possession": "52",
+      "shooting": "13",
+      "shooting_on_target": "1",
+      "foul": "15",
+      "yellow": "2",
+      "red": "0",
+      "conerkick": "2",
+      "freekick": "16",
+      "offside": "1"
+    },
+    "away_stat": {
+      "possession": "48",
+      "shooting": "11",
+      "shooting_on_target": "4",
+      "foul": "17",
+      "yellow": "2",
+      "red": "0",
+      "conerkick": "4",
+      "freekick": "20",
+      "offside": "3"
+    },
+    "home_goal": [
+      {
+        "player": "명준재",
+        "time": "후47",
+        "own": "false",
+        "assist_player": ""
+      }
+    ],
+    "away_goal": [
+      {
+        "player": "타가트",
+        "time": "전22",
+        "own": "false",
+        "assist_player": "전세진"
+      }
+    ],
+    "home_card": [
+      { "player": "정동윤", "time": "후8", "type": "yellow" },
+      { "player": "지언학", "time": "후20", "type": "yellow" }
+    ],
+    "away_card": [
+      { "player": "최성근", "time": "전36", "type": "yellow" },
+      { "player": "구자룡", "time": "후27", "type": "yellow" }
+    ]
   }
 ]

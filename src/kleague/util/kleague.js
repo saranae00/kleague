@@ -1,5 +1,10 @@
 import { team } from '../util/teamSkeleton';
 
+// 리그내 팀 갯수
+const _MAX_TEAM = 12;
+// 스플릿이 나눠질 라운드
+const _SPLIT_ROUND_NUM = 33;
+
 const SetTeamArray = () => {
   let teamArray = [];
   teamArray.push({ ...team, id: 0, name: '울산' });
@@ -30,6 +35,9 @@ export const getMaxRound = matchList => {
   }
   return result;
 };
+
+// 스플릿이 나눠질 팀 갯수(스플릿A 팀의 갯수)
+const splitTeamsNum = () => _MAX_TEAM / 2;
 
 const calWinningPointByMatch = (item, arrTeam) => {
   let homeTeam = arrTeam.find(vlaue => {
@@ -87,40 +95,38 @@ const calWinningPointByRound = (round, matchList) => {
   return result;
 };
 
-export const calTeamArrayTotal = (round, matchList) => {
-  const statByRound = calWinningPointByRound(round, matchList);
+export const calTeamArrayTotal = (beginRound, maxRound, matchList) => {
+  const statByRound = calWinningPointByRound(maxRound, matchList);
   let result = SetTeamArray();
   if (Array.isArray(statByRound[0])) {
-    for (let i = 0; i < round; i++) {
+    for (let i = beginRound - 1; i < maxRound; i++) {
       for (let j = 0; j < statByRound[i].length; j++) {
-        // console.log(
-        //   result[j].name +
-        //     ':' +
-        //     result[j].winningPoint +
-        //     '+' +
-        //     statByRound[i][j].winningPoint
-        // );
-        result[j].winningPoint += statByRound[i][j].winningPoint;
-        result[j].foul += statByRound[i][j].foul;
-        result[j].yellow += statByRound[i][j].yellow;
-        result[j].red += statByRound[i][j].red;
-        result[j].win += statByRound[i][j].win;
-        result[j].lose += statByRound[i][j].lose;
-        result[j].draw += statByRound[i][j].draw;
-        result[j].getScore += statByRound[i][j].getScore;
-        result[j].lostScore += statByRound[i][j].lostScore;
-        result[j].spectator += statByRound[i][j].spectator;
-        result[j].homeMatchNum += statByRound[i][j].homeMatchNum;
-        result[j].matchNum += 1;
+        if (
+          statByRound[i][j].win !== 0 ||
+          statByRound[i][j].draw !== 0 ||
+          statByRound[i][j].lose !== 0
+        ) {
+          result[j].winningPoint += statByRound[i][j].winningPoint;
+          result[j].foul += statByRound[i][j].foul;
+          result[j].yellow += statByRound[i][j].yellow;
+          result[j].red += statByRound[i][j].red;
+          result[j].win += statByRound[i][j].win;
+          result[j].lose += statByRound[i][j].lose;
+          result[j].draw += statByRound[i][j].draw;
+          result[j].getScore += statByRound[i][j].getScore;
+          result[j].lostScore += statByRound[i][j].lostScore;
+          result[j].spectator += statByRound[i][j].spectator;
+          result[j].homeMatchNum += statByRound[i][j].homeMatchNum;
+          result[j].matchNum += 1;
+        }
         //console.log(result[j].winningPoint);
       }
     }
   }
-
   return result;
 };
 
-const sortTable = (a, b) => {
+const sortTable = (a, b, matchList) => {
   // 승점 순
   if (a.winningPoint !== b.winningPoint) {
     return b.winningPoint - a.winningPoint;
@@ -134,17 +140,126 @@ const sortTable = (a, b) => {
         return b.getScore - b.lostScore - (a.getScore - a.lostScore);
       } else {
         //득실차가 같을 경우, 다승 순
-        return b.win - a.win;
+        if (a.win !== b.win) {
+          return b.win - a.win;
+        } else {
+          // 다승이 같을 경우 상대 전적
+          const vsStat = getVsStat(a, b, matchList);
+          return vsStat.lose - vsStat.win;
+        }
       }
     }
   }
 };
 
-const getTeamArrayByRound = (round, matchList) => {
-  let result = [];
+export const getVsStat = (home, away, data) => {
+  let vsStat = {
+    home_name: home,
+    away_name: away,
+    win: 0,
+    lose: 0,
+    draw: 0,
+    score: 0,
+    lost: 0
+  };
 
-  for (let i = 1; i < round + 1; i++) {
-    result.push(calTeamArrayTotal(i, matchList));
+  let tmpMathchList;
+  if (home !== 'none' && away !== 'none') {
+    tmpMathchList = data.filter(
+      item =>
+        (item.home === home && item.away === away) ||
+        (item.home === away && item.away === home)
+    );
+  }
+
+  for (let item of tmpMathchList) {
+    if (parseInt(item.home_score) > parseInt(item.away_score)) {
+      if (item.home === home) {
+        vsStat.win += 1;
+        vsStat.score += parseInt(item.home_score);
+        vsStat.lost += parseInt(item.away_score);
+      } else {
+        vsStat.lose += 1;
+        vsStat.score += parseInt(item.away_score);
+        vsStat.lost += parseInt(item.home_score);
+      }
+    } else if (parseInt(item.home_score) < parseInt(item.away_score)) {
+      if (item.home === home) {
+        vsStat.lose += 1;
+        vsStat.score += parseInt(item.away_score);
+        vsStat.lost += parseInt(item.home_score);
+      } else {
+        vsStat.win += 1;
+        vsStat.score += parseInt(item.home_score);
+        vsStat.lost += parseInt(item.away_score);
+      }
+    } else {
+      vsStat.draw += 1;
+      vsStat.score += parseInt(item.home_score);
+      vsStat.lost += parseInt(item.away_score);
+    }
+  }
+  return vsStat;
+};
+
+export const getTeamArrayTotal = (maxRound, matchList) => {
+  let result;
+
+  if (maxRound < _SPLIT_ROUND_NUM + 1) {
+    result = calTeamArrayTotal(1, maxRound, matchList);
+    result.sort((a, b) => sortTable(a, b, matchList));
+  } else {
+    const splitATeamNum = splitTeamsNum();
+    result = calTeamArrayTotal(1, _SPLIT_ROUND_NUM, matchList);
+    result.sort((a, b) => sortTable(a, b, matchList));
+    const splitA = result.slice(0, splitATeamNum);
+    const splitB = result.slice(splitATeamNum, result.length);
+    const afterSplit = calTeamArrayTotal(
+      _SPLIT_ROUND_NUM + 1,
+      maxRound,
+      matchList
+    );
+
+    afterSplit.forEach(item => {
+      let isprocessed = false;
+      splitA.forEach(splitAItem => {
+        if (item.id === splitAItem.id) {
+          splitAItem.draw += item.draw;
+          splitAItem.foul += item.foul;
+          splitAItem.getScore += item.getScore;
+          splitAItem.homeMatchNum += item.homeMatchNum;
+          splitAItem.lose += item.lose;
+          splitAItem.lostScore += item.lostScore;
+          splitAItem.matchNum += item.matchNum;
+          splitAItem.spectator += item.spectator;
+          splitAItem.win += item.win;
+          splitAItem.winningPoint += item.winningPoint;
+          splitAItem.yellow += item.yellow;
+          isprocessed = true;
+        }
+      });
+      if (!isprocessed) {
+        splitB.forEach(splitBItem => {
+          if (item.id === splitBItem.id) {
+            splitBItem.draw += item.draw;
+            splitBItem.foul += item.foul;
+            splitBItem.getScore += item.getScore;
+            splitBItem.homeMatchNum += item.homeMatchNum;
+            splitBItem.lose += item.lose;
+            splitBItem.lostScore += item.lostScore;
+            splitBItem.matchNum += item.matchNum;
+            splitBItem.spectator += item.spectator;
+            splitBItem.win += item.win;
+            splitBItem.winningPoint += item.winningPoint;
+            splitBItem.yellow += item.yellow;
+          }
+        });
+      }
+    });
+    splitA.sort((a, b) => sortTable(a, b, matchList));
+    splitB.sort((a, b) => sortTable(a, b, matchList));
+
+    result = splitA.concat(splitB);
   }
   return result;
 };
@@ -203,21 +318,18 @@ const getByTeam = argArr => {
   return result;
 };
 
+// 라운드별 순위
 const getRankingByRound = (maxRound, matchList) => {
-  let byRoundWinningPoint = getTeamArrayByRound(maxRound, matchList);
-  // 배열 순위 정렬
-  for (let i = 0; i < byRoundWinningPoint.length; i++) {
-    byRoundWinningPoint[i].sort((a, b) => sortTable(a, b));
-  }
-
-  // 라운드별 순위 배열 만들기
-  const rankingByRound = byRoundWinningPoint.map(item => {
-    let result = item.map((each, index) => ({
-      name: each.name,
+  let rankingByRound = [];
+  for (let i = 0; i < maxRound; i++) {
+    const items = getTeamArrayTotal(i, matchList);
+    console.log(items);
+    const rankingData = items.map((item, index) => ({
+      name: item.name,
       value: index + 1
     }));
-    return result;
-  });
+    rankingByRound.push(rankingData);
+  }
   return rankingByRound;
 };
 

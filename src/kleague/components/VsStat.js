@@ -43,8 +43,6 @@ const VsStat = props => {
   ]);
   const [droppedBoxNames, setDroppedBoxNames] = useState([]);
 
-  const vsStat = getVsStat(home, away, data);
-
   function isDropped(boxName) {
     return droppedBoxNames.indexOf(boxName) > -1;
   }
@@ -100,7 +98,6 @@ const VsStat = props => {
       );
     }
   };
-
   const onChangeAway = e => {
     if (e.target.value === home && home !== 'none') {
       alert('같은 팀을 선택 했습니다. 다시 선택해 주세요');
@@ -130,18 +127,20 @@ const VsStat = props => {
     }
   };
 
+  const vsStat = getVsStat(home, away, data);
+
   const graphData = [
     {
-      name: vsStat.home_name,
-      value: vsStat.win
+      name: vsStat && vsStat.home_name,
+      value: vsStat && vsStat.win
     },
     {
-      name: vsStat.away_name,
-      value: vsStat.lose
+      name: vsStat && vsStat.away_name,
+      value: vsStat && vsStat.lose
     },
     {
       name: '무승부',
-      value: vsStat.draw
+      value: vsStat && vsStat.draw
     }
   ];
 
@@ -217,14 +216,21 @@ const VsStat = props => {
           )}
         </div>
         <div className="vsStat_graph">
-          <div className="vsStat_text">
-            {`${vsStat.home_name} : ${vsStat.win}승 ${vsStat.draw}무 ${vsStat.lose}패 (${vsStat.score}득점 ${vsStat.lost}실점)`}
-            <br />
-            {`${vsStat.away_name} : ${vsStat.lose}승 ${vsStat.draw}무 ${vsStat.win}패 (${vsStat.lost}득점 ${vsStat.score}실점)`}
-          </div>
-          <div>
-            <CircularGraph data={graphData} width={vsStatCircularGraphWidth} />
-          </div>
+          {vsStat.win + vsStat.draw + vsStat.lose > 0 && (
+            <Fragment>
+              <div className="vsStat_text">
+                {`${vsStat.home_name} : ${vsStat.win}승 ${vsStat.draw}무 ${vsStat.lose}패 (${vsStat.score}득점 ${vsStat.lost}실점)`}
+                <br />
+                {`${vsStat.away_name} : ${vsStat.lose}승 ${vsStat.draw}무 ${vsStat.win}패 (${vsStat.lost}득점 ${vsStat.score}실점)`}
+              </div>
+              <div>
+                <CircularGraph
+                  data={graphData}
+                  width={vsStatCircularGraphWidth}
+                />
+              </div>
+            </Fragment>
+          )}
         </div>
         <div className="vsStat_away_dustbin">
           {dustbins.map(

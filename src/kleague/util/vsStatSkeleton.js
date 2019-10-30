@@ -1,4 +1,4 @@
-export let vsStatSkeleton = {
+export const vsStatSkeleton = {
   home_name: '',
   away_name: '',
   win: 0,

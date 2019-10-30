@@ -1,6 +1,5 @@
 import { team } from './teamSkeleton';
 import { vsStatSkeleton } from './vsStatSkeleton';
-import VsStat from '../components/VsStat';
 
 // 리그내 팀 갯수
 const _MAX_TEAM = 12;
@@ -155,11 +154,11 @@ const sortTable = (a, b, matchList) => {
 };
 
 export const getVsStat = (home, away, data) => {
-  let vsStat = vsStatSkeleton;
-  vsStat.home = home;
-  VsStat.away = away;
+  let vsStat = { ...vsStatSkeleton };
+  vsStat.home_name = home;
+  vsStat.away_name = away;
 
-  let tmpMathchList;
+  let tmpMathchList = [];
   if (home !== 'none' && away !== 'none') {
     tmpMathchList = data.filter(
       item =>
@@ -167,7 +166,6 @@ export const getVsStat = (home, away, data) => {
         (item.home === away && item.away === home)
     );
   }
-
   for (let item of tmpMathchList) {
     if (parseInt(item.home_score) > parseInt(item.away_score)) {
       if (item.home === home) {
@@ -195,6 +193,7 @@ export const getVsStat = (home, away, data) => {
       vsStat.lost += parseInt(item.away_score);
     }
   }
+
   return vsStat;
 };
 
@@ -319,7 +318,6 @@ const getRankingByRound = (maxRound, matchList) => {
   let rankingByRound = [];
   for (let i = 0; i < maxRound; i++) {
     const items = getTeamArrayTotal(i, matchList);
-    console.log(items);
     const rankingData = items.map((item, index) => ({
       name: item.name,
       value: index + 1

@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/kleague/static/css/main.2e24e49e.chunk.css",
-    "main.js": "/kleague/static/js/main.e128fde8.chunk.js",
-    "main.js.map": "/kleague/static/js/main.e128fde8.chunk.js.map",
+    "main.css": "/kleague/static/css/main.2d2fbfce.chunk.css",
+    "main.js": "/kleague/static/js/main.18e2ba55.chunk.js",
+    "main.js.map": "/kleague/static/js/main.18e2ba55.chunk.js.map",
     "runtime-main.js": "/kleague/static/js/runtime-main.81c93da9.js",
     "runtime-main.js.map": "/kleague/static/js/runtime-main.81c93da9.js.map",
     "static/js/2.0d8daef3.chunk.js": "/kleague/static/js/2.0d8daef3.chunk.js",
     "static/js/2.0d8daef3.chunk.js.map": "/kleague/static/js/2.0d8daef3.chunk.js.map",
     "index.html": "/kleague/index.html",
-    "precache-manifest.9b3774e53c248f126ad0d0365c79b989.js": "/kleague/precache-manifest.9b3774e53c248f126ad0d0365c79b989.js",
+    "precache-manifest.fd80f31b1600ddf00807d909018a12bd.js": "/kleague/precache-manifest.fd80f31b1600ddf00807d909018a12bd.js",
     "service-worker.js": "/kleague/service-worker.js",
-    "static/css/main.2e24e49e.chunk.css.map": "/kleague/static/css/main.2e24e49e.chunk.css.map"
+    "static/css/main.2d2fbfce.chunk.css.map": "/kleague/static/css/main.2d2fbfce.chunk.css.map"
   }
 }

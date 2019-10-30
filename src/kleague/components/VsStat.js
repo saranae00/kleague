@@ -3,6 +3,7 @@ import CircularGraph from '../../graph/components/CircularGraph';
 import VsStatDustbin from './VsStatDustbin';
 import VsStatItem from './VsStatItem';
 import VsStatItemType from './VsStatItemType';
+import { getVsStat } from '../util/kleague';
 import './vsStat.css';
 import { produce } from 'immer';
 
@@ -42,6 +43,8 @@ const VsStat = props => {
   ]);
   const [droppedBoxNames, setDroppedBoxNames] = useState([]);
 
+  const vsStat = getVsStat(home, away, data);
+
   function isDropped(boxName) {
     return droppedBoxNames.indexOf(boxName) > -1;
   }
@@ -68,16 +71,6 @@ const VsStat = props => {
     },
     [dustbins, droppedBoxNames]
   );
-
-  let vsStat = {
-    home_name: home,
-    away_name: away,
-    win: 0,
-    lose: 0,
-    draw: 0,
-    score: 0,
-    lost: 0
-  };
 
   const onChangeHome = e => {
     if (e.target.value === away && away !== 'none') {
@@ -136,44 +129,6 @@ const VsStat = props => {
       );
     }
   };
-
-  let mathchList = [];
-
-  if (home !== 'none' && away !== 'none') {
-    mathchList = data.filter(
-      item =>
-        (item.home === home && item.away === away) ||
-        (item.home === away && item.away === home)
-    );
-  }
-
-  for (let item of mathchList) {
-    if (parseInt(item.home_score) > parseInt(item.away_score)) {
-      if (item.home === home) {
-        vsStat.win += 1;
-        vsStat.score += parseInt(item.home_score);
-        vsStat.lost += parseInt(item.away_score);
-      } else {
-        vsStat.lose += 1;
-        vsStat.score += parseInt(item.away_score);
-        vsStat.lost += parseInt(item.home_score);
-      }
-    } else if (parseInt(item.home_score) < parseInt(item.away_score)) {
-      if (item.home === home) {
-        vsStat.lose += 1;
-        vsStat.score += parseInt(item.away_score);
-        vsStat.lost += parseInt(item.home_score);
-      } else {
-        vsStat.win += 1;
-        vsStat.score += parseInt(item.home_score);
-        vsStat.lost += parseInt(item.away_score);
-      }
-    } else {
-      vsStat.draw += 1;
-      vsStat.score += parseInt(item.home_score);
-      vsStat.lost += parseInt(item.away_score);
-    }
-  }
 
   const graphData = [
     {
@@ -262,21 +217,14 @@ const VsStat = props => {
           )}
         </div>
         <div className="vsStat_graph">
-          {mathchList.length > 0 && (
-            <Fragment>
-              <div className="vsStat_text">
-                {`${vsStat.home_name} : ${vsStat.win}승 ${vsStat.draw}무 ${vsStat.lose}패 (${vsStat.score}득점 ${vsStat.lost}실점)`}
-                <br />
-                {`${vsStat.away_name} : ${vsStat.lose}승 ${vsStat.draw}무 ${vsStat.win}패 (${vsStat.lost}득점 ${vsStat.score}실점)`}
-              </div>
-              <div>
-                <CircularGraph
-                  data={graphData}
-                  width={vsStatCircularGraphWidth}
-                />
-              </div>
-            </Fragment>
-          )}
+          <div className="vsStat_text">
+            {`${vsStat.home_name} : ${vsStat.win}승 ${vsStat.draw}무 ${vsStat.lose}패 (${vsStat.score}득점 ${vsStat.lost}실점)`}
+            <br />
+            {`${vsStat.away_name} : ${vsStat.lose}승 ${vsStat.draw}무 ${vsStat.win}패 (${vsStat.lost}득점 ${vsStat.score}실점)`}
+          </div>
+          <div>
+            <CircularGraph data={graphData} width={vsStatCircularGraphWidth} />
+          </div>
         </div>
         <div className="vsStat_away_dustbin">
           {dustbins.map(

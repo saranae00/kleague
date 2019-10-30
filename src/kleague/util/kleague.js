@@ -1,4 +1,6 @@
-import { team } from '../util/teamSkeleton';
+import { team } from './teamSkeleton';
+import { vsStatSkeleton } from './vsStatSkeleton';
+import VsStat from '../components/VsStat';
 
 // 리그내 팀 갯수
 const _MAX_TEAM = 12;
@@ -153,15 +155,9 @@ const sortTable = (a, b, matchList) => {
 };
 
 export const getVsStat = (home, away, data) => {
-  let vsStat = {
-    home_name: home,
-    away_name: away,
-    win: 0,
-    lose: 0,
-    draw: 0,
-    score: 0,
-    lost: 0
-  };
+  let vsStat = vsStatSkeleton;
+  vsStat.home = home;
+  VsStat.away = away;
 
   let tmpMathchList;
   if (home !== 'none' && away !== 'none') {

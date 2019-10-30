@@ -9,7 +9,6 @@ import './Rangking.css';
 import VsStat from './VsStat';
 import {
   getMaxRound,
-  calTeamArrayTotal,
   rankArrayByRound,
   getSpectatorByRound,
   getSpectatorByMatch,
@@ -148,8 +147,6 @@ const Rangking = props => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [matchList]);
 
-  const a = getTeamArrayTotal(maxRound, matchList);
-  console.log(a);
   return (
     <Fragment>
       <div className="tab_buttons">
